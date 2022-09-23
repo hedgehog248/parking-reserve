@@ -12,12 +12,12 @@ class User < ApplicationRecord
   NAME_REGEX = /\A[ぁ-んァ-ヶ一-龥々ー]+\z/.freeze
   NAME_REGEX_MSG = 'は全角文字（漢字・ひらがな・カタカナ）を使用してください。再入力をお願いします。'.freeze
 
-  with_options presence: true, format: {with: NAME_REGEX, message: NAME_REGEX_MSG} do
+  with_options presence: true, format: { with: NAME_REGEX, message: NAME_REGEX_MSG } do
     validates :last_name
     validates :first_name
   end
 
-  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  PASSWORD_REGEX_MSG = 'には英字と数字をそれぞれ1文字以上含めるようにしてください。再入力をお願いします。'
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+  PASSWORD_REGEX_MSG = 'には英字と数字をそれぞれ1文字以上含めるようにしてください。再入力をお願いします。'.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: PASSWORD_REGEX_MSG
 end

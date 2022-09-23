@@ -13,12 +13,12 @@ RSpec.describe User, type: :model do
     end
     context '登録できないとき' do
       it 'building_numが空だと登録できない' do
-        @user.building_num = ""
+        @user.building_num = ''
         @user.valid?
         expect(@user.errors.full_messages).to include '棟番号を入力してください'
       end
       it 'room_numが空だと登録できない' do
-        @user.room_num = ""
+        @user.room_num = ''
         @user.valid?
         expect(@user.errors.full_messages).to include '部屋番号を入力してください'
       end
@@ -29,42 +29,42 @@ RSpec.describe User, type: :model do
         expect(another_user.errors.full_messages).to include '部屋番号はすでに存在します'
       end
       it 'last_nameが空だと登録できない' do
-        @user.last_name = ""
+        @user.last_name = ''
         @user.valid?
         expect(@user.errors.full_messages).to include '姓を入力してください'
       end
       it 'last_nameが半角だと登録できない' do
-        @user.last_name = "abc123"
+        @user.last_name = 'abc123'
         @user.valid?
         expect(@user.errors.full_messages).to include '姓は全角文字（漢字・ひらがな・カタカナ）を使用してください。再入力をお願いします。'
       end
       it 'last_nameが全角数字だと登録できない' do
-        @user.last_name = "１２３４"
+        @user.last_name = '１２３４'
         @user.valid?
         expect(@user.errors.full_messages).to include '姓は全角文字（漢字・ひらがな・カタカナ）を使用してください。再入力をお願いします。'
       end
       it 'first_nameが空だと登録できない' do
-        @user.first_name = ""
+        @user.first_name = ''
         @user.valid?
         expect(@user.errors.full_messages).to include '名を入力してください'
       end
       it 'first_nameが半角だと登録できない' do
-        @user.first_name = "abc123"
+        @user.first_name = 'abc123'
         @user.valid?
         expect(@user.errors.full_messages).to include '名は全角文字（漢字・ひらがな・カタカナ）を使用してください。再入力をお願いします。'
       end
       it 'first_nameが全角数字だと登録できない' do
-        @user.first_name = "１２３４"
+        @user.first_name = '１２３４'
         @user.valid?
         expect(@user.errors.full_messages).to include '名は全角文字（漢字・ひらがな・カタカナ）を使用してください。再入力をお願いします。'
       end
       it 'emailが空だと登録できない' do
-        @user.email = ""
+        @user.email = ''
         @user.valid?
         expect(@user.errors.full_messages).to include 'Eメールを入力してください'
       end
       it 'emailに@が含まれないと登録できない' do
-        @user.email = "testmail"
+        @user.email = 'testmail'
         @user.valid?
         expect(@user.errors.full_messages).to include 'Eメールは不正な値です'
       end
@@ -75,18 +75,18 @@ RSpec.describe User, type: :model do
         expect(another_user.errors.full_messages).to include 'Eメールはすでに存在します'
       end
       it 'passwordが空だと登録できない' do
-        @user.password = ""
+        @user.password = ''
         @user.valid?
         expect(@user.errors.full_messages).to include 'パスワードを入力してください'
       end
       it 'passwordとpassword_confirmationが一致しないと登録できない' do
-        @user.password = "abc123"
-        @user.password_confirmation = "abc1234"
+        @user.password = 'abc123'
+        @user.password_confirmation = 'abc1234'
         @user.valid?
         expect(@user.errors.full_messages).to include 'パスワード（確認用）とパスワードの入力が一致しません'
       end
       it 'passwordが5文字以下だと登録できない' do
-        @user.password = "abc12"
+        @user.password = 'abc12'
         @user.password_confirmation = @user.password
         @user.valid?
         expect(@user.errors.full_messages).to include 'パスワードは6文字以上で入力してください'
@@ -98,24 +98,22 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include 'パスワードは128文字以内で入力してください'
       end
       it 'passwordが数字のみでは登録できない' do
-        @user.password = "123456"
+        @user.password = '123456'
         @user.password_confirmation = @user.password
         @user.valid?
         expect(@user.errors.full_messages).to include 'パスワードには英字と数字をそれぞれ1文字以上含めるようにしてください。再入力をお願いします。'
       end
       it 'passwordが英字のみでは登録できない' do
-        @user.password = "abcdef"
+        @user.password = 'abcdef'
         @user.password_confirmation = @user.password
         @user.valid?
         expect(@user.errors.full_messages).to include 'パスワードには英字と数字をそれぞれ1文字以上含めるようにしてください。再入力をお願いします。'
-
       end
       it 'passwordが全角文字では登録できない' do
-        @user.password = "あかさたなは"
+        @user.password = 'あかさたなは'
         @user.password_confirmation = @user.password
         @user.valid?
         expect(@user.errors.full_messages).to include 'パスワードには英字と数字をそれぞれ1文字以上含めるようにしてください。再入力をお願いします。'
-
       end
     end
   end
