@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        building_num: 棟番号
+        room_num: 部屋番号
+        last_name: 姓
+        first_name: 名
+    errors:
+      messages:
