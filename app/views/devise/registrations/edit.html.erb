@@ -4,6 +4,27 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :building_num %><br />
+    <%= f.select :building_num, [["---", ""], ["10号棟", 10], ["11号棟", 11], ["12号棟", 12], ["13号棟", 13], ["14号棟", 14], ["15号棟", 15], ["16号棟", 16], ["17号棟", 17]] %> 
+  </div>
+
+  <div class="field">
+    <%= f.label :room_num %><br />
+    <%= f.select :room_num, [["---", ""]] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
