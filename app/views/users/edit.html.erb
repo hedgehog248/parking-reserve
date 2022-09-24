@@ -1,0 +1,6 @@
+<h1>編集する</h1>
+<%= form_with model: @user, local: true do |f| %>
+  <%= f.text_field :last_name, placeholder: "姓" %>
+  <%= f.text_field :first_name, placeholder: "名" %>
+  <%= f.%>
+<% end %>
