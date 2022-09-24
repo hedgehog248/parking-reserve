@@ -14,7 +14,7 @@
         登録者氏名
       </td>
       <td>
-        <%= @user.last_name %> <%= @user.first_name %>様
+        <%= @user.last_name %> <%= @user.first_name %>
       </td>
     </tr>
     <tr>
@@ -28,6 +28,8 @@
   </table>
 
   <%= link_to "編集", edit_user_registration_path %>
-  <%= link_to "削除", "#" %>
+  <%= link_to "削除", user_registration_path, method: :delete, data: {
+              confirm: "#{@user.last_name}さん！\n利用者登録を削除すると現在の予約もすべて削除されます。\n本当に削除しますか？\nよろしければ【OK】ボタンを押してください。"
+              } %>
   <%= link_to "戻る", root_path %>
 </div>
