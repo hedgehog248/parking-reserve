@@ -1,35 +1,44 @@
-<h1>利用者情報</h1>
-<div>
-  <table>
-    <tr>
-      <td>
-        部屋番号
-      </td>
-      <td>
-        <%= @user.building_num %>号棟 <%= @user.room_num %>号室
-      </td>
-    </tr>
-    <tr>
-      <td>
-        登録者氏名
-      </td>
-      <td>
-        <%= @user.last_name %> <%= @user.first_name %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        メールアドレス
-      </td>
-      <td>
-        <%= @user.email %>
-      </td>
-    </tr>
-  </table>
+<div class="main">
+  <h1>利用者情報</h1>
+  <div class="user-info-content">
+    <div class="left-content">
+      <table>
+        <tr>
+          <td>
+            部屋番号
+          </td>
+          <td>
+            <%= @user.building_num %>号棟 <%= @user.room_num %>号室
+          </td>
+        </tr>
+        <tr>
+          <td>
+            登録者氏名
+          </td>
+          <td>
+            <%= @user.last_name %> <%= @user.first_name %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            メールアドレス
+          </td>
+          <td>
+            <%= @user.email %>
+          </td>
+        </tr>
+      </table>
+    </div>
 
-  <%= link_to "編集", edit_user_registration_path %>
-  <%= link_to "削除", user_registration_path, method: :delete, data: {
-              confirm: "#{@user.last_name}さん！\n利用者登録を削除すると現在の予約もすべて削除されます。\n本当に削除しますか？\nよろしければ【OK】ボタンを押してください。"
-              } %>
-  <%= link_to "戻る", root_path %>
+    <div class="right-content">
+      <%= render partial: "shared/edit_btn", locals: { linked_path: edit_user_registration_path } %>
+
+      <% confirm_msg = "#{@user.last_name}さん！\n利用者登録を削除すると現在の予約もすべて削除されます。\n本当に削除しますか？\nよろしければ【OK】ボタンを押してください。" %>
+      <%= render partial: "shared/delete_btn", locals: {
+                          linked_path: user_registration_path, 
+                          confirm_msg: confirm_msg
+      } %>
+    <%# = render partial: "shared/backward_btn", locals: { linked_path: root_path } %>
+    </div>
+  </div>
 </div>
