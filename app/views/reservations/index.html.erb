@@ -3,7 +3,8 @@
   翌月末まで予約することができます。
   <div class="">
     <%= month_calendar do |date| %>
-      <%= date.day %>
+      <%#= date.day %>
+      <%= link_to "#{date.day}", "#" %>
     <% end %>
   </div>
 </div>

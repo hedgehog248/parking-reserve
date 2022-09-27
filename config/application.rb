@@ -11,6 +11,13 @@ module ParkingReserve
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    # タイムゾーンの設定をTokyoにする
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone= :local
+
+    # カレンダーを日曜始まりにする
+    config.beginning_of_week = :sunday
+    
     # 日本語の言語設定
     config.i18n.default_locale = :ja
     
