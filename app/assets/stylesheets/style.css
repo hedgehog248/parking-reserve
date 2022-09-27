@@ -102,6 +102,12 @@ th, td {
   font-size: 12px;
 }
 
+.required::after {
+  color: red;
+  font-size: 12px;
+  content: ' ※必須';
+}
+
 /***********
   footer
 ***********/
@@ -129,4 +135,38 @@ footer {
 
 .right-content {
   display: flex;
+}
+
+/**************************
+  reservation timeline main
+**************************/
+
+.timeline {
+  width: 600px;
+  max-width: 90%;
+  border-collapse: collapse;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}  
+
+td {
+  border: solid 1px #ebebeb;
+}
+
+.thead-time {
+  text-align: left;
+}
+
+/**************************
+  reservation new main
+**************************/
+.reserv_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form_content {
+  padding: 20px;
 }

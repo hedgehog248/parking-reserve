@@ -1,0 +1,28 @@
+<div class="main">
+  <h1>予約作成</h1>
+
+  <%= form_with model: @reservation, class: "reserv_form", local: true do |f| %>
+    <%= render "devise/shared/error_messages", resource: f.object %>
+    
+    <div class="form_content">
+      <%= f.label :start_datetime, '開始日時', class: 'required' %><br/>
+      <%= f.datetime_select :start_datetime, discard_minute: true %>:00から
+    </div>
+    <div class="form_content">
+      <%= f.label :end_datetime, '終了日時', class: 'required'%><br/>
+      <%= f.datetime_select :end_datetime, discard_minute: true %>:59まで
+    </div>
+    <div class='form_content'>
+      <div class='required'>駐車場番号</div>
+      <%= f.radio_button :park_num, 1 %>
+      <%= f.label :park_num_1, "1番" %>
+      <%= f.radio_button :park_num, 2 %>
+      <%= f.label :park_num_2, "2番" %>
+      <%= f.radio_button :park_num, 3 %>
+      <%= f.label :park_num_3, "3番" %>
+      <%= f.radio_button :park_num, 4 %>
+      <%= f.label :park_num_4, "4番" %>
+    </div>
+    <%= f.submit '確認画面へ', id:'reserv_submit' %>
+  <% end %>
+</div>
