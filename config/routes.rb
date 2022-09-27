@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   }
   root to: 'users#index'
   resources :users, only: [:index, :show]
-  resources :reservations, only: [:index, :show, :new, :create]
+  resources :reservations, only: [:index, :new, :create, :show] do
+    collection do
+      post 'confirm'
+    end
+  end
 end

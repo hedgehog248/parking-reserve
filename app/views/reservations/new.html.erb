@@ -1,7 +1,7 @@
 <div class="main">
   <h1>予約作成</h1>
 
-  <%= form_with model: @reservation, class: "reserv_form", local: true do |f| %>
+  <%= form_with model: @reservation, url: confirm_reservations_path, class: "reserv_form", local: true do |f| %>
     <%= render "devise/shared/error_messages", resource: f.object %>
     
     <div class="form_content">
