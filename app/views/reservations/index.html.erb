@@ -1,3 +1,9 @@
 <div class="main">
-  <%= current_user.last_name %><%= current_user.first_name %>さん、こんにちは！
+  <h1>予約表</h1>
+  翌月末まで予約することができます。
+  <div class="">
+    <%= month_calendar do |date| %>
+      <%= date.day %>
+    <% end %>
+  </div>
 </div>
