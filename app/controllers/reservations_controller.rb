@@ -13,7 +13,6 @@ class ReservationsController < ApplicationController
   end
 
   def confirm
-    binding.pry
     if @reservation.invalid?
       render :new
     end
@@ -22,8 +21,6 @@ class ReservationsController < ApplicationController
   def create
     if params[:back] || !@reservation.save
       render :new
-    else
-      redirect_to root_path
     end
   end
 
