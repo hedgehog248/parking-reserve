@@ -1,6 +1,6 @@
-/***********
-  header
-***********/
+/***************
+  shared header
+***************/
 
 header {
   width: 100vw;
@@ -41,10 +41,21 @@ a {
   text-decoration: none;
 }
 
-/***********
-  main shared
-***********/
+/***************
+  shared footer
+***************/
+footer {
+  width: 100vw;
+  height: 40px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: lighter;
+  line-height: 40px;
+}
 
+/**************
+  main shared
+**************/
 .main-wrapper {
   width: 100vw;
   height: calc(100vh - 100px - 40px);
@@ -108,19 +119,9 @@ th, td {
   content: ' ※必須';
 }
 
-/***********
-  footer
-***********/
-footer {
-  width: 100vw;
-  height: 40px;
-  text-align: center;
-  font-size: 12px;
-  font-weight: lighter;
-  line-height: 40px;
+.field_with_errors {
+  display: contents;
 }
-
-
 /****************
   user-info main
 ****************/
