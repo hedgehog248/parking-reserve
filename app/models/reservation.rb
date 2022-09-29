@@ -14,6 +14,8 @@ class Reservation < ApplicationRecord
   validate :e_time_open_check
   validate :e_time_deadline_check
 
+  private
+
   def s_time_open_check
     s_time_open = (DateTime.current + 1.hour).beginning_of_hour
     errors.add(:start_datetime, 'は現在の日時より後を選択してください。') if start_datetime < s_time_open

@@ -10,6 +10,7 @@ class ReservationsController < ApplicationController
   end
 
   def new
+    redirect_to root_path if valid_reserv.length >= 3
     @reservation = Reservation.new
   end
 
@@ -35,7 +36,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reserv_params)
   end
 
-  def adjust_start_min
-
+  def valid_reserv
+    valid_reserv = Reservation.where("end_datetime > ?", DateTime.current).where("user_id = ?", current_user.id)
   end
 end
