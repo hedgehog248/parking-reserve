@@ -15,7 +15,6 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    redirect_to root_path if count_reserv >= 3
     @reservation = Reservation.new
     @reservation[:park_num] = params[:park_num]
     @reservation[:start_datetime] = params[:start_datetime]
@@ -42,11 +41,6 @@ class ReservationsController < ApplicationController
 
   def set_reserv
     @reservation = Reservation.new(reserv_params)
-  end
-
-  def count_reserv
-    valid_reserv = Reservation.where("end_datetime > ?", DateTime.current).where("user_id = ?", current_user.id)
-    return valid_reserv.length
   end
 
 end

@@ -15,6 +15,7 @@ class Reservation < ApplicationRecord
   validate :e_time_open_check
   validate :e_time_deadline_check
   validate :check_overbooking
+  validate :count_reserv_below_3
 
   private
 
@@ -54,6 +55,12 @@ class Reservation < ApplicationRecord
     else
       return true
     end
+  end
+
+  def count_reserv_below_3
+    binding.pry
+    valid_reserv = Reservation.where("end_datetime > ?", DateTime.current).where("user_id = ?", user_id)
+    errors.add(:base, :invalid, message: "既に3件の予約があります。一度にとれる予約は3つまでです。") if valid_reserv.length >= 3
   end
 
 end
