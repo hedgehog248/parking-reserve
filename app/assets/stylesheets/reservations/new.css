@@ -1,0 +1,14 @@
+.reserv_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  padding: 20px 40px 40px;
+  background-color: #E8E8E8;
+}
+
+.form_content {
+  padding: 20px;
+}

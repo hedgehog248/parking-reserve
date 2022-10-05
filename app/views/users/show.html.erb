@@ -1,28 +1,30 @@
 <div class="main">
-  <h1>利用者情報</h1>
+  <h1 class="page-title">
+    利用者情報
+  </h1>
   <div class="user-info-content">
     <div class="left-content">
-      <table>
+      <table class="user-info">
         <tr>
-          <td>
+          <th>
             部屋番号
-          </td>
+          </th>
           <td>
             <%= @user.building_num %>号棟 <%= @user.room_num %>号室
           </td>
         </tr>
         <tr>
-          <td>
+          <th>
             登録者氏名
-          </td>
+          </th>
           <td>
             <%= @user.last_name %> <%= @user.first_name %>
           </td>
         </tr>
         <tr>
-          <td>
+          <th>
             メールアドレス
-          </td>
+          </th>
           <td>
             <%= @user.email %>
           </td>
@@ -30,7 +32,7 @@
       </table>
     </div>
 
-    <div class="right-content">
+    <div class="btn-content">
       <%= render partial: "shared/edit_btn", locals: { linked_path: edit_user_registration_path } %>
 
       <% confirm_msg = "#{@user.last_name}さん！\n利用者登録を削除すると現在の予約もすべて削除されます。\n本当に削除しますか？\nよろしければ【OK】ボタンを押してください。" %>
@@ -38,7 +40,8 @@
                           linked_path: user_registration_path, 
                           confirm_msg: confirm_msg
       } %>
-    <%# = render partial: "shared/backward_btn", locals: { linked_path: root_path } %>
     </div>
   </div>
+
+  <%= render partial: "shared/backward_btn", locals: { linked_path: root_path, page: "トップページ" } %>
 </div>

@@ -1,0 +1,17 @@
+.form-wrapper {
+  padding: 3em;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background-color: #dcdcdc;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+
+}
+
+.field {
+  width: 100%;
+}

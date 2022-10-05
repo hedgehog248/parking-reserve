@@ -1,3 +1,14 @@
 <div class="main">
-  <%= current_user.last_name %><%= current_user.first_name %>さん、こんにちは！
+  <h1 class="page-title">予約表</h1>
+  <p class="message">
+    確認したい日付をクリックまたはタップしてください。<br>
+    翌月末まで予約することができます。
+  </p>
+  <div class="">
+    <%= month_calendar do |date| %>
+      <%= link_to "#{date.day}", reservation_path(date) %>
+    <% end %>
+  </div>
+  <%= render partial: "shared/backward_btn", locals: { linked_path: root_path, page: "トップページ" } %>
+
 </div>
