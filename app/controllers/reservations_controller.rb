@@ -1,7 +1,6 @@
 class ReservationsController < ApplicationController
   require 'active_support/all'
   include ReservationsHelper
-  before_action :authenticate_user!
   before_action :set_reserv, only: [:confirm, :create]
 
   def index
