@@ -1,7 +1,7 @@
 <div class="main">
-  予約が完了しました。
+  <p class="message">
+    予約が完了しました。
+  </p>
 
-  <div class="root-btn">
-    <%= link_to "トップページへ戻る", root_path %>
-  </div>
+  <%= render partial: "shared/backward_btn", locals: { linked_path: root_path, page: "トップページ" } %>
 </div>

@@ -1,0 +1,30 @@
+.form-wrapper {
+  padding: 3em;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  /* background-color: #dbdbdb; */
+}
+
+.form {
+  display: block;
+  justify-content: center;
+}
+
+.new_user {
+  width: 100%;
+}
+.field {
+  width: 100%;
+  padding-bottom: 0.8em;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.links {
+  padding: 1em;
+  text-align: center;
+}

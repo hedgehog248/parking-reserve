@@ -1,8 +1,9 @@
 <div class="main">
-  <h1>予約確認</h1>
-  内容に間違いがなければ、確定ボタンを押してください
-
-  <div>
+  <h1 class="page-title">予約確認</h1>
+  <p class="message">
+    内容に間違いがなければ、確定ボタンを押してください。
+  </p>
+  <div class="reserv-form">
     <div class="form_content">
       <label>開始日時</label>
       <%= l @reservation.start_datetime %>
@@ -15,13 +16,13 @@
       <label>駐車場番号</label>
       <%= @reservation.park_num %>番
     </div>
-  </div>
 
-  <%= form_with model: @reservation, class: "reserv_form", local: true do |f| %>
+    <%= form_with model: @reservation, local: true do |f| %>
       <%= f.hidden_field :start_datetime %>
       <%= f.hidden_field :end_datetime %>
       <%= f.hidden_field :park_num %>
-    <%= f.submit '確定', class: "complete-btn" %>
-    <%= f.submit '戻る', name: :back, class: "backward-btn" %>
-  <% end %>
+      <%= f.submit '確定', class: "submit btn" %>
+      <%= f.submit '戻る', name: :back, class: "backward btn" %>
+    <% end %>
+  </div>
 </div>

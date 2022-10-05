@@ -15,8 +15,8 @@ ja:
     errors:
       messages:
   simple_calendar:
-    previous: 前月を表示
-    next: 次月を表示
+    previous: <<前月を表示
+    next: 次月を表示>>
     week: 週
   time:
     formats:

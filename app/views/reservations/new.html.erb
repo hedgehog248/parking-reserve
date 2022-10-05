@@ -1,6 +1,7 @@
 <div class="main">
-  <h1>予約作成</h1>
-
+  <p class="message">
+    項目を入力して予約ボタンを押してください。
+  </p>
   <%= form_with model: @reservation, url: confirm_reservations_path, class: "reserv_form", local: true do |f| %>
     <%= render "shared/error_messages", resource: f.object %>
     
@@ -23,6 +24,7 @@
       <%= f.radio_button :park_num, 4 %>
       <%= f.label :park_num_4, "4番" %>
     </div>
-    <%= f.submit '確認画面へ', id:'reserv_submit' %>
+    <%= f.submit '確認画面へ', class: 'submit btn', id:'reserv_submit' %>
   <% end %>
+  <%= render partial: "shared/backward_btn", locals: { linked_path: :back, page: "前のページ" } %>
 </div>

@@ -1,48 +1,54 @@
 <div class="main">
-  <%= tag.h1 '予約表' %>
-  1回の予約で確保できるのは最大24時間です。<br/>
-  予約開始時間枠を選んでください。
+  <p class="message">
+    予約開始時間の枠をクリックまたはタップしてください。<br/>
+    1回の予約で確保できるのは最大24時間です。
+  </p>
 
   <%# ナビゲータ %>
-  <div class="">
-    <div class="">
-      <%= link_to "前日を表示する", reservation_path(@dtime.yesterday) %>
+  <div class="timetable-heading">
+    <div class="prev-day">    
+      <%= link_to "<< 前日を表示する", reservation_path(@dtime.yesterday) %>
     </div>
-    <div class="">
+    <div class="timetable-title">
       <%= l @dtime, format: :hidden_time %>(<%= %w(日 月 火 水 木 金 土)[@dtime.wday] %>)
     </div>
-    <div class="">
-      <%= link_to "翌日を表示する", reservation_path(@dtime.tomorrow) %>
+    <div class="next-day">
+      <%= link_to "翌日を表示する >>", reservation_path(@dtime.tomorrow) %>
     </div>
   </div>
 
   <%# テーブルの描画 %>
-  <table class="timetable">
-    <thead>
-      <tr>
-        <%= tag.th %>
-        <% 24.times do |hour| %>
-          <%= tag.th(class: "hours_cell") {tag.div hour, class: "hour_label"} %>
-        <% end %>
-        <%= tag.th(class: "hours_cell") {tag.div 0, class: "hour_label"} %>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% (1..4).each do |num| %> 
+  <div class="timetable-container">
+    <table class="timetable">
+      <thead>
         <tr>
-          <%= tag.th tag.div(num, class: "p_num_label p_num_#{num}") %>
+          <%= tag.th %>
           <% 24.times do |hour| %>
-            <td>
-              <% if check_reservation(@reservations[num - 1], @dtime, hour) %>
-                <%= tag.div "✕", class: "reserved_bar p_num_#{num}" %>
-              <% else %>
-                <%= button_to "○", new_reservation_path, method: :get, class: "submit", params: {park_num: num, start_datetime: (@dtime + hour.hour)} %>
-              <% end %>
-            </td>
+            <%= tag.th(class: "hours_cell") {tag.div hour, class: "hour_label"} %>
           <% end %>
+          <%= tag.th(class: "hours_cell") {tag.div 0, class: "hour_label"} %>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody>
+        <% (1..4).each do |num| %> 
+          <tr>
+            <th class="p_num-wrapper sticky-header"> 
+              <%= tag.div(num, class: "p_num_label p_num_#{num}") %>
+            </th>
+            <% 24.times do |hour| %>
+              <td class="cell">
+                <% if check_reservation(@reservations[num - 1], @dtime, hour) %>
+                  <%= tag.div "✕", class: "reserved_bar p_num_#{num}" %>
+                <% else %>
+                  <%= button_to "○", new_reservation_path, method: :get, class: "submit", params: {park_num: num, start_datetime: (@dtime + hour.hour)} %>
+                <% end %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= render partial: "shared/backward_btn", locals: { linked_path: :back, page: "前のページ" } %>
 </div>
