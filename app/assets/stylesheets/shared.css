@@ -99,6 +99,16 @@ nav {
 
 .message {
   color: #151517;
+  text-align: center;
+}
+
+.error_exp {
+  color: #ff2200;
+}
+
+.error_exp ul {
+  padding-left: 2em;
+  list-style: circle;
 }
 
 .required::after {

@@ -1,16 +1,9 @@
 .form-wrapper {
+  padding: 3em;
   width: 100%;
   height: auto;
-  padding: 2em;
-  margin-bottom: 40px;
   border-radius: 10px;
-  background-color: #dbdbdb;
-}
-
-.alert {
-  padding-bottom: 1em;
-  text-align: center;
-  color: red;
+  /* background-color: #dbdbdb; */
 }
 
 .form {

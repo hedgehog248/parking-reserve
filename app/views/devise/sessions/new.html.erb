@@ -1,16 +1,22 @@
 <div class="main">
   <h1 class="page-title"><%= t('.sign_in') %></h1>
+  <div class="message">
+    Eメールとパスワードを入力してログインボタンを押してください。<br>
+    初めての方は「アカウント登録」から登録画面に移動してください。
+  </div>
 
-  <%= alert %>
   <div class="form-wrapper">
+    <div class="alert">
+      <%= alert %>
+    </div>
     <div class="form">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
+        <div class="field required">
           <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
 
-        <div class="field">
+        <div class="field required">
           <%= f.label :password %><br />
           <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
@@ -27,6 +33,8 @@
         </div>
       <% end %>
     </div>
-    <%= render "devise/shared/links" %>
+    <div class="links">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>
