@@ -10,7 +10,7 @@
       <%= link_to "<< 前日を表示する", reservation_path(@dtime.yesterday) %>
     </div>
     <div class="timetable-title">
-      <%= l @dtime, format: :hidden_time %>(<%= %w(日 月 火 水 木 金 土)[@dtime.wday] %>)
+      <%= l @dtime, format: :hidden_time %>
     </div>
     <div class="next-day">
       <%= link_to "翌日を表示する >>", reservation_path(@dtime.tomorrow) %>
