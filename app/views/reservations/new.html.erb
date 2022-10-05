@@ -15,16 +15,14 @@
     </div>
     <div class='form_content'>
       <div class='required'>駐車場番号</div>
-      <%= f.radio_button :park_num, 1 %>
-      <%= f.label :park_num_1, "1番" %>
-      <%= f.radio_button :park_num, 2 %>
-      <%= f.label :park_num_2, "2番" %>
-      <%= f.radio_button :park_num, 3 %>
-      <%= f.label :park_num_3, "3番" %>
-      <%= f.radio_button :park_num, 4 %>
-      <%= f.label :park_num_4, "4番" %>
+      <% (1..4).each do |num| %>
+        <div class="radio-btn">
+        <%= f.radio_button :park_num, num %>
+        <%= f.label ":park_num_#{num}", "#{num}番" %>
+        </div>
+      <% end %>
     </div>
-    <%= f.submit '確認画面へ', class: 'submit btn', id:'reserv_submit' %>
+    <%= f.submit '確認画面へ', class: 'submit-btn btn', id:'reserv_submit' %>
   <% end %>
-  <%= render partial: "shared/backward_btn", locals: { linked_path: :back, page: "前のページ" } %>
+  <%= render partial: "shared/backward_btn", locals: { linked_path: reservation_path(@reservation[:start_datetime].beginning_of_day), page: "時間選択ページ" } %>
 </div>

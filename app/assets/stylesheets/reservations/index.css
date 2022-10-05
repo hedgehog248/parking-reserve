@@ -26,11 +26,14 @@
 }
 
 .table-striped td {
-  padding: 20px 0;
   font-size: 125%;
   border: 1px solid #dbdbdb;
 }
 
+.table-striped a {
+  display: block;
+  padding: 1em;
+}
 
 .prev-month a {
   display: none;
@@ -46,6 +49,21 @@
 }
 
 .today {
-  outline: 4px solid #98DED9;
-  outline-offset: -10px;;
+  background-color: #F6F6F6;
+  outline: 4px solid #161d6f;
+  outline-offset: -10px;
+}
+
+.future {
+  background-color: #F6F6F6;
+}
+
+.today a:hover, .future a:hover {
+  background-color: #c7ffd8;
+  transition: all, 0.2s;
+}
+
+.past a:hover {
+  background-color: #c5d7cc;
+  transition: all, 0.2s;
 }

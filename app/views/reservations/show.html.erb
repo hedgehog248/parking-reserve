@@ -41,7 +41,7 @@
                 <% if check_reservation(@reservations[num - 1], @dtime, hour) %>
                   <%= tag.div "✕", class: "reserved_bar p_num_#{num}" %>
                 <% else %>
-                  <%= button_to "○", new_reservation_path, method: :get, class: "submit", params: {park_num: num, start_datetime: (@dtime + hour.hour)} %>
+                  <%= button_to "○", new_reservation_path, method: :get, class: "time-submit", params: {park_num: num, start_datetime: (@dtime + hour.hour)} %>
                 <% end %>
               </td>
             <% end %>
@@ -50,5 +50,5 @@
       </tbody>
     </table>
   </div>
-  <%= render partial: "shared/backward_btn", locals: { linked_path: :back, page: "前のページ" } %>
+  <%= render partial: "shared/backward_btn", locals: { linked_path: reservations_path(@dtime), page: "カレンダーページ" } %>
 </div>

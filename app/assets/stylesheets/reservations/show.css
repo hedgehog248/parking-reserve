@@ -10,6 +10,14 @@
   font-weight: 600;
 }
 
+.prev-day {
+  text-align: left;
+}
+
+.next-day {
+  text-align: right;
+}
+
 .timetable-container {
   width: 100%;
   overflow-x: auto;
@@ -41,41 +49,58 @@
   align-items: center;
   min-width: 50px;
   min-height: 50px;
-  background-color: #fff;
+  background-color: #f6f6f6;
 }
 
 .p_num_label {
-  width: 80%;
-  height: 80%;
+  min-width: 40px;
+  min-height: 40px;
   border-radius: 5px;
   color: #fff;
   font-weight: 600;
-  font-size: 36px;
-  line-height: 36px;
+  font-size: 2em;
+  line-height: 40px;
   text-align: center;
 }
 
 .sticky-header {
   position: sticky;
   left: 0;
+  z-index: 100;
 }
 .cell {
-  padding: 10px;
+  min-width: 40px;
   border-width: 1px;
   border-style: solid dashed;
   border-color: #dbdbdb;
 }
 
+.button_to {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
 
-.button_to, .submit {
+.time-submit {
+  display: block;
+  width: 100%;
   border: none;
-  background-color: #fff;
+  background-color: transparent;
+  color: transparent;
+  font-size: 2em;
   cursor: pointer;
+  transition: all, 0.2s;
+}
+
+.time-submit:hover {
+  background-color: #c7ffd8;
+  transition: all, 0.2s;
 }
 
 .reserved_bar {
   width: 100%;
   height: 80%;
+  color: #ffffff00;
 }
 
 .p_num_1 {

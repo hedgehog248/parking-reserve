@@ -124,12 +124,13 @@ nav {
 /********* 
   buttons
 *********/
-.submit {
+.submit-btn {
   display: inline-block;
-  padding: 0.8em 2em;
+  padding: 0.4em 1em;
   background-color: #98DED9;
   box-shadow: 0 3px 0 #59a6a1;
-  border-radius: 60px;
+  border: none;
+  border-radius: 8px;
   color: #151517;
   cursor: pointer;
 }
@@ -142,10 +143,10 @@ nav {
 
 .backward {
   display: inline-block;
-  padding: 0.8em 2em;
+  padding: 0.4em 1em;
   background-color: #98DED9;
   box-shadow: 0 3px 0 #59a6a1;
-  border-radius: 60px;
+  border-radius: 8px;
   color: #181818;
   cursor: pointer;
 }
