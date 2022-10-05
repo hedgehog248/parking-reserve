@@ -1,11 +1,11 @@
-/***********
-  header
-***********/
+/***************
+  shared header
+***************/
 
 header {
   width: 100vw;
   height: 100px;
-  background-color: lightgreen;
+  background-color: #cdfbdf;
   padding: 20px;
 }
 
@@ -18,7 +18,7 @@ header {
 .title {
   font-size: 30px;
   font-weight: 400;
-  color: #fff;
+  color: #2e2e2e;
 }
 
 a:link, a:visited {
@@ -41,10 +41,21 @@ a {
   text-decoration: none;
 }
 
-/***********
-  main shared
-***********/
+/***************
+  shared footer
+***************/
+footer {
+  width: 100vw;
+  height: 40px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: lighter;
+  line-height: 40px;
+}
 
+/**************
+  main shared
+**************/
 .main-wrapper {
   width: 100vw;
   height: calc(100vh - 100px - 40px);
@@ -102,19 +113,15 @@ th, td {
   font-size: 12px;
 }
 
-/***********
-  footer
-***********/
-footer {
-  width: 100vw;
-  height: 40px;
-  text-align: center;
+.required::after {
+  color: red;
   font-size: 12px;
-  font-weight: lighter;
-  line-height: 40px;
+  content: ' ※必須';
 }
 
-
+.field_with_errors {
+  display: contents;
+}
 /****************
   user-info main
 ****************/
@@ -129,4 +136,83 @@ footer {
 
 .right-content {
   display: flex;
+}
+
+/**************************
+  reservation timetable main
+**************************/
+
+.timetable {
+  /* width: 600px; */
+  /* max-width: 90%; */
+  border-collapse: collapse;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}  
+
+td {
+  padding: 0px;
+  border: solid 1px #ebebeb;
+}
+
+.hours_cell {
+  position: relative;
+  height: 10px;
+}
+
+.hour_label {
+  position: absolute;
+  left: 0%;
+  bottom: 0%; 
+  transform: translate(-50%, -50%);
+
+}
+
+.p_num_label {
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 36px;
+  border-radius: 10px;
+}
+
+.button_to, .submit {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.reserved_bar {
+  width: 100%;
+  height: 80%;
+}
+
+.p_num_1 {
+  background-color: #00d2c6;
+}
+
+.p_num_2 {
+  background-color: #5b88fc;
+}
+
+.p_num_3 {
+  background-color: #8e1dff;
+}
+
+.p_num_4 {
+  background-color: #fd34e9;
+}
+/**************************
+  reservation new main
+**************************/
+.reserv_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form_content {
+  padding: 20px;
 }

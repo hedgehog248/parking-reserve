@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :reservations
+
   with_options presence: true do
     validates :building_num
     validates :room_num, uniqueness: { scope: :building_num }
