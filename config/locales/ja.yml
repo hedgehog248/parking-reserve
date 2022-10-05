@@ -20,6 +20,6 @@ ja:
     week: 週
   time:
     formats:
-      default: '%Y年%m月%d日 %H:%M'
-      slashed: '%Y/%m/%d %H:%M'
-      hidden_time: '%Y年%m月%d日'
+      default: '%Y年%m月%d日(%a) %H:%M'
+      slashed: '%Y/%m/%d(%a) %H:%M'
+      hidden_time: '%Y年%m月%d日(%a)'
