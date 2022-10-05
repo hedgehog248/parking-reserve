@@ -3,6 +3,11 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-  root to: 'reservations#index'
-  resources :users, only: :show
+  root to: 'users#index'
+  resources :users, only: [:index, :show]
+  resources :reservations, only: [:index, :new, :create, :show] do
+    collection do
+      post 'confirm'
+    end
+  end
 end
