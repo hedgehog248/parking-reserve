@@ -12,11 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require simple_calendar
  */
 
  *, ::before, ::after {
   box-sizing: border-box;
   font-family: 'Noto Sans JP', sans-serif;
  }
-
- *= require simple_calendar
