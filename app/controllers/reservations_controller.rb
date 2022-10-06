@@ -4,7 +4,6 @@ class ReservationsController < ApplicationController
   before_action :set_reserv, only: [:confirm, :create]
 
   def index
-
   end
 
   def show
@@ -32,6 +31,12 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def destroy
+    reservation = Reservation.find(params[:id])
+    reservation.destroy
+    redirect_to root_path
+  end
+
   private
 
   def reserv_params
@@ -41,5 +46,4 @@ class ReservationsController < ApplicationController
   def set_reserv
     @reservation = Reservation.new(reserv_params)
   end
-
 end
