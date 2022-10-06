@@ -12,3 +12,8 @@
 .form_content {
   padding: 20px;
 }
+
+.radio-btn {
+  display: inline-block;
+  padding: 0 0.5em;
+}

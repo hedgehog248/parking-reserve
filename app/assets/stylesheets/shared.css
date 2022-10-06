@@ -85,11 +85,11 @@ nav {
 .main {
   width: 50%;
   min-width: 512px;
-  padding: 20px 0;
+  padding: 1.6em 0;
 }
 
 .page-title {
-  margin-bottom: 20px;
+  margin-bottom: 0.2em;
   text-align: center;
   color: #161D6F;
   font-size: 175%;
@@ -99,6 +99,17 @@ nav {
 
 .message {
   color: #151517;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.error_exp {
+  color: #ff2200;
+}
+
+.error_exp ul {
+  padding-left: 2em;
+  list-style: circle;
 }
 
 .required::after {
@@ -114,12 +125,13 @@ nav {
 /********* 
   buttons
 *********/
-.submit {
+.submit-btn {
   display: inline-block;
-  padding: 0.8em 2em;
+  padding: 0.4em 1em;
   background-color: #98DED9;
   box-shadow: 0 3px 0 #59a6a1;
-  border-radius: 60px;
+  border: none;
+  border-radius: 8px;
   color: #151517;
   cursor: pointer;
 }
@@ -132,10 +144,10 @@ nav {
 
 .backward {
   display: inline-block;
-  padding: 0.8em 2em;
+  padding: 0.4em 1em;
   background-color: #98DED9;
   box-shadow: 0 3px 0 #59a6a1;
-  border-radius: 60px;
+  border-radius: 8px;
   color: #181818;
   cursor: pointer;
 }
