@@ -2,18 +2,18 @@
   <p class="message">
     項目を入力して予約ボタンを押してください。
   </p>
-  <%= form_with model: @reservation, url: confirm_reservations_path, class: "reserv_form", local: true do |f| %>
+  <%= form_with model: @reservation, url: confirm_reservations_path, class: "reserv-form", local: true do |f| %>
     <%= render "shared/error_messages", resource: f.object %>
     
-    <div class="form_content">
+    <div class="form-content">
       <%= f.label :start_datetime, '開始日時', class: 'required' %><br/>
       <%= f.datetime_select :start_datetime, discard_minute: true %>:00から
     </div>
-    <div class="form_content">
+    <div class="form-content">
       <%= f.label :end_datetime, '終了日時', class: 'required'%><br/>
       <%= f.datetime_select :end_datetime, discard_minute: true %>:59まで
     </div>
-    <div class='form_content'>
+    <div class='form-content'>
       <div class='required'>駐車場番号</div>
       <% (1..4).each do |num| %>
         <div class="radio-btn">
