@@ -39,6 +39,8 @@ html {
  h1 {
   font-size: 5.6rem;
   font-weight: 900;
+  letter-spacing: -0.09em;
+  line-height: 6.2rem;
  }
  h2 {
   font-size: 2.8rem;
@@ -70,10 +72,12 @@ header {
   width: 86%;
   max-width: 512px;
   color: colors(accent);
-}
-
-.logo p {
-  font-size: 0.8rem;
+  a {
+    cursor: pointer;
+  }
+  p {
+    font-size: 1.2rem;
+  }
 }
 
 /*----------------------------------------------------------
@@ -90,15 +94,14 @@ nav {
   justify-content: right;
   width: 86%;
   max-width: 512px;
-  padding-bottom: 10px;
-}
-
-.nav-bar li {
-  margin-left: 30px;
-  color: colors(accent);
-  list-style: none;
-  font-size: 1.8rem;
-  cursor: pointer;
+  li {
+    display: block;
+    padding: 0.5rem 2rem;
+    color: colors(accent);
+    list-style: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
 }
 
 /*----------------------------------------------------------
@@ -174,7 +177,7 @@ nav {
   display: inline-block;
   padding: 0.4em 1em;
   background-color: colors(second);
-  box-shadow: 0 3px 0 colors(darkish-second);
+  box-shadow: 0 3px 0 darken(colors(second), 36%);
   border: none;
   border-radius: 6px;
   color: colors(text);
@@ -189,7 +192,7 @@ nav {
     display: inline-block;
     padding: 0.4em 1em;
     background-color: colors(second);
-    box-shadow: 0 3px 0 colors(darkish-second);
+    box-shadow: 0 3px 0 darken(colors(second), 36%);
     border-radius: 6px;
     color: colors(text);
     cursor: pointer;
@@ -203,7 +206,7 @@ nav {
   height: 60px;
   width: 60px;
   background-color: colors(second);
-  box-shadow: 0 3px 0 darken(colors(second), 10%);
+  box-shadow: 0 3px 0 darken(colors(second), 36%);
   border-radius: 3px;
   color: colors(text);
   cursor: pointer;

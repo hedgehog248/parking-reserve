@@ -8,9 +8,9 @@
 <nav>
   <ul class="nav-bar">
     <% if user_signed_in? %>
-      <li><%= link_to "予約表", reservations_path %></li>
-      <li><%= link_to "利用者情報", user_path(current_user.id) %></li>
-      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      <li class="nav-item"><%= link_to "予約表", reservations_path %></li>
+      <li class="nav-item"><%= link_to "利用者情報", user_path(current_user.id) %></li>
+      <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
     <% end %>
   </ul>
 </nav>
