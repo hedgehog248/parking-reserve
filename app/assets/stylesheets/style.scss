@@ -175,12 +175,14 @@ nav {
 ----------------------------------------------------------*/
 .submit-btn {
   display: inline-block;
-  padding: 0.4em 1em;
-  background-color: colors(second);
-  box-shadow: 0 3px 0 darken(colors(second), 36%);
+  padding: 0.8em 1.6em;
+  background-color: colors(base);
+  box-shadow: 0 3px 0 darken(colors(base), 36%);
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   color: colors(text);
+  outline: 2px solid colors(second);
+  outline-offset: -2px;
   cursor: pointer;
 }
 
@@ -188,15 +190,17 @@ nav {
   display: flex;
   justify-content: center;
   padding: 20px;
-  .backward {
-    display: inline-block;
-    padding: 0.4em 1em;
-    background-color: colors(second);
-    box-shadow: 0 3px 0 darken(colors(second), 36%);
-    border-radius: 6px;
-    color: colors(text);
-    cursor: pointer;
-  }
+}
+
+.backward {
+  display: inline-block;
+  padding: 0.6em 1.4em;
+  background-color: colors(second);
+  box-shadow: 0 3px 0 darken(colors(second), 36%);
+  border: none;
+  border-radius: 8px;
+  color: colors(text);
+  cursor: pointer;
 }
 
 .square {
@@ -222,13 +226,17 @@ nav {
 }
 
 .btn-text {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   font-size: 1.2rem;
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-top: 38px;
+    text-align: center;
+  }
 }
 
 .btn:hover {
@@ -463,6 +471,34 @@ nav {
 }
 
 /*----------------------------------------------------------
+  reservation/confirm 確認ページ
+----------------------------------------------------------*/
+.confirm-table {
+  width: 100%;
+  .form-content {
+    th {
+      padding: 0.5em;
+    }
+    td {
+      padding: 0.5em;
+    }
+  }  
+}
+
+.confirm-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  .submit-btn {
+    margin: 3rem 3rem 0;
+  }
+  .backward {
+    margin: 3rem 3rem 0;
+  }
+}
+
+
+/*----------------------------------------------------------
   users/index トップページ
 ----------------------------------------------------------*/
 .reserv-info-content {
@@ -572,4 +608,18 @@ nav {
   .reserv-content-wrapper {
     display: block;
   }
+  /* reservations/confirm */ 
+  .confirm-form {
+    flex-direction: column-reverse;
+    width: fit-content;
+    .submit-btn {
+      display: block;
+      margin: 2.6rem 0 0 0;
+    }
+    .backward {
+      display: block;
+      margin: 2.6rem 0 0 0;
+    }
+  }
+  
 }

@@ -3,26 +3,29 @@
   <p class="message">
     内容に間違いがなければ、確定ボタンを押してください。
   </p>
-  <div class="reserv-form">
-    <div class="form-content">
-      <label>開始日時</label>
-      <%= l @reservation.start_datetime %>
-    </div>
-    <div class="form-content">
-      <label>終了日時</label>
-      <%= l @reservation.end_datetime %>
-    </div>
-    <div class='form-content'>
-      <label>駐車場番号</label>
-      <%= @reservation.park_num %>番
-    </div>
 
-    <%= form_with model: @reservation, local: true do |f| %>
+  <div class="reserv-form">
+    <table class="confirm-table">
+      <tr class="form-content">
+        <%= tag.th "開始日時" %>
+        <%= tag.td (l @reservation.start_datetime) %>
+      </tr>
+      <tr class="form-content">
+        <%= tag.th "終了日時" %>
+        <%= tag.td (l @reservation.end_datetime) %>
+      </tr>
+      <tr class='form-content'>
+        <%= tag.th "駐車場番号" %>
+        <%= tag.td ("#{@reservation.park_num}番") %>
+      </tr>
+    </table>
+
+    <%= form_with model: @reservation, local: true, class: "confirm-form" do |f| %>
       <%= f.hidden_field :start_datetime %>
       <%= f.hidden_field :end_datetime %>
       <%= f.hidden_field :park_num %>
-      <%= f.submit '確定', class: "submit btn" %>
       <%= f.submit '戻る', name: :back, class: "backward btn" %>
+      <%= f.submit '確定', class: "submit-btn btn" %>
     <% end %>
   </div>
 </div>
