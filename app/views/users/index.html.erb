@@ -1,7 +1,11 @@
 <div class="main">
   <div class="message">
     <%= current_user.last_name %>さん、こんにちは！<br>
-    <%= current_user.last_name %>さんの予約状況は以下の通りです。
+    <% if @reservations.present? %>
+      現在の予約状況は以下の通りです。
+    <% else %>
+      現在、予約はありません。
+    <% end %>
   </div>
   
   <% @reservations.each.with_index(1) do |reserv, index| %>
