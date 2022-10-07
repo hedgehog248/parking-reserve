@@ -1,7 +1,4 @@
 .reserv-info-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   padding: 1.5em;
   margin-bottom: 2em;
   border-radius: 5px;
@@ -15,8 +12,13 @@
   font-weight: 300;
 }
 
+.reserv-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .reserv-info {
-  table-layout: fixed;
   width: 100%;
 }
 
@@ -30,4 +32,15 @@
 
 .btn-content {
   display: flex;
+}
+
+/* タブレット表示時 */
+@media (min-width: 600px) and (max-width: 1024px) {
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+  .reserv-content-wrapper {
+    display: block;
+  }
 }

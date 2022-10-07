@@ -8,7 +8,6 @@
 }
 
 .user-info {
-  table-layout: fixed;
   width: 100%;
 }
 
@@ -22,4 +21,19 @@
 
 .btn-content {
   display: flex;
+  justify-content: right;
+}
+
+/* タブレット表示時 */
+@media (min-width: 600px) and (max-width: 1024px) {
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+  .user-info-content {
+    display: block;
+  }
+  .btn-content {
+    padding-top: 1rem;
+  }
 }
