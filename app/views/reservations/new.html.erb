@@ -22,7 +22,7 @@
         </div>
       <% end %>
     </div>
-    <%= f.submit '確認画面へ', class: 'submit-btn btn', id:'reserv_submit' %>
+    <%= f.submit '確認画面へ', class: 'colored-btn btn', id:'reserv_submit' %>
   <% end %>
   <%= render partial: "shared/backward_btn", locals: { linked_path: reservation_path(@reservation[:start_datetime].beginning_of_day), page: "時間選択ページ" } %>
 </div>

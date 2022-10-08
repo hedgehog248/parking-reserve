@@ -1,57 +1,61 @@
-<div main>
-  <h2><%= t('.title', resource: resource.model_name.human) %></h2>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+<div class="main">
+  <h2 class="page-title"><%= t('.title', resource: resource.model_name.human) %></h2>
 
-    <div class="field">
-      <%= f.label :building_num %><br />
-      <%= f.select :building_num, [["---", ""], ["10号棟", 10], ["11号棟", 11], ["12号棟", 12], ["13号棟", 13], ["14号棟", 14], ["15号棟", 15], ["16号棟", 16], ["17号棟", 17]] %> 
-    </div>
+  <div class="form-wrapper">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="build-num">
+      <div class="field">
+            <%= f.label :building_num, class: "required" %><br />
+        <%= f.select :building_num, [["---", ""], ["10号棟", 10], ["11号棟", 11], ["12号棟", 12], ["13号棟", 13], ["14号棟", 14], ["15号棟", 15], ["16号棟", 16], ["17号棟", 17]] %> 
+      </div>
 
-    <div class="field">
-      <%= f.label :room_num %><br />
-      <%= f.select :room_num, [["---", ""]] %>
-    </div>
+      <div class="field">
+            <%= f.label :room_num, class: "required" %><br />
+        <%= f.select :room_num, [["---", ""]] %>
+      </div>
+        </div>
 
-    <div class="field">
-      <%= f.label :last_name %><br />
-      <%= f.text_field :last_name %>
-    </div>
+      <div class="field">
+          <%= f.label :last_name, class: "text-field required" %><br />
+          <%= f.text_field :last_name, class: "text-field" %>
+      </div>
 
-    <div class="field">
-      <%= f.label :first_name %><br />
-      <%= f.text_field :first_name %>
-    </div>
+      <div class="field">
+          <%= f.label :first_name, class: "text-field required" %><br />
+          <%= f.text_field :first_name, class: "text-field" %>
+      </div>
+      <div class="field">
+          <%= f.label :email, class: "text-field required" %><br />
+          <%= f.email_field :email, autocomplete: "email", class: "text-field" %>
+      </div>
 
-
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-      <% if @minimum_password_length %>
-        <br />
-        <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
       <% end %>
-    </div>
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
-    
-    <div class="actions">
-      <%= f.submit t('.update') %>
-    </div>
-  <% end %>
+      <div class="field">
+        <%= f.label :password %> <em>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</em><br />
+        <%= f.password_field :password, autocomplete: "new-password", class: "text-field" %>
+        <% if @minimum_password_length %>
+          <br />
+          <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
+        <% end %>
+      </div>
 
-  <%= render partial: "shared/backward_btn", locals: { linked_path: :back, page: "前のページ" } %>
+      <div class="field">
+        <%= f.label :password_confirmation, class: "text-field"%><em>(パスワードを変更する場合は入力してください)</em><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "text-field" %>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit t('.update'), class: "white-btn btn" %>
+      </div>
+    <% end %>
+    <div class="links">
+      <%= render partial: "shared/backward_btn", locals: { linked_path: :back, page: "前のページ" } %>
+    </div>
+  </div>
 </div>
