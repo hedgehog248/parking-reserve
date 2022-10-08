@@ -1,0 +1,664 @@
+/*---------------------------------------------------------
+  Color Setting
+---------------------------------------------------------*/
+$colors: (
+  base: #F6F6F6,
+  main: #C7FFD8,
+  second: #98DED9,
+  accent: #161D6F,
+  grayish-base: #E8E8E8,
+  text: #222,
+  note: #ff2200,
+  table-border: #dbdbdb,
+  past: #cdcdcd,
+  park1: #00d2c6,
+  park2: #5b88fc,
+  park3: #8e1dff,
+  park4: #fd34e9
+);
+
+@function colors($key) {
+  @return map-get($colors, $key);
+}
+
+/*----------------------------------------------------------
+  Base Style
+----------------------------------------------------------*/
+///////////////////////////* Font Setting *////////////////////////////
+*, ::before, ::after {
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
+ }
+
+html {
+  font-size: 62.5%;
+ }
+ body {
+  font-size: 1.4rem;
+ }
+ h1 {
+  font-size: 5.6rem;
+  font-weight: 900;
+  letter-spacing: -0.09em;
+  line-height: 6.2rem;
+ }
+ h2 {
+  font-size: 2.8rem;
+  font-weight: 600;
+ }
+ h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+ }
+ em {
+  font-size: 1.2rem;
+ }
+
+// リンクの装飾をなしにする
+a:link, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*----------------------------------------------------------
+  Header
+----------------------------------------------------------*/
+header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  background-color: colors(main);
+}
+
+.logo {
+  width: 86%;
+  max-width: 512px;
+  color: colors(accent);
+  a {
+    cursor: pointer;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+/*----------------------------------------------------------
+  Nav-bar
+----------------------------------------------------------*/
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: colors(main);
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: right;
+  width: 86%;
+  max-width: 512px;
+  li {
+    display: block;
+    padding: 0.5rem 2rem;
+    color: colors(accent);
+    list-style: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+}
+
+/*----------------------------------------------------------
+  Footer
+----------------------------------------------------------*/
+.footer {
+  width: 100%;
+  padding: 10px;
+  background-color: colors(accent);
+}
+
+.copyright {
+  color: colors(base);
+  text-align: center;
+  line-height: inherit;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+/*----------------------------------------------------------
+  Main Shared
+----------------------------------------------------------*/
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  background-color: colors(base);
+}
+
+.main {
+  width: 86%;
+  max-width: 512px;
+  padding: 1.6em 0;
+}
+
+.page-title {
+  margin-bottom: 0.2em;
+  text-align: center;
+  color: colors(accent);
+  letter-spacing: 0.08em;
+}
+
+.message {
+  color: colors(text);
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.error_exp {
+  color: colors(note);
+}
+
+.error_exp ul {
+  padding-left: 2em;
+  list-style: circle;
+}
+
+.required::after {
+  color: colors(note);
+  font-size: 12px;
+  content: ' ※必須';
+}
+
+.field_with_errors {
+  display: contents;
+}
+
+/*----------------------------------------------------------
+  Buttons
+----------------------------------------------------------*/
+.white-btn {
+  display: inline-block;
+  padding: 0.8em 1.6em;
+  background-color: colors(base);
+  box-shadow: 0 3px 0 darken(colors(base), 36%);
+  border: none;
+  border-radius: 8px;
+  color: colors(text);
+  outline: 4px solid colors(second);
+  outline-offset: -4px;
+  cursor: pointer;
+}
+
+.backward-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.colored-btn {
+  display: inline-block;
+  padding: 0.6em 1.4em;
+  background-color: colors(second);
+  box-shadow: 0 3px 0 darken(colors(second), 36%);
+  border: none;
+  border-radius: 8px;
+  color: colors(text);
+  cursor: pointer;
+}
+
+.square {
+  display: inline-block;
+  position: relative;
+  margin-left: 20px;
+  height: 60px;
+  width: 60px;
+  background-color: colors(second);
+  box-shadow: 0 3px 0 darken(colors(second), 36%);
+  border-radius: 3px;
+  color: colors(text);
+  cursor: pointer;
+}
+
+.btn-icon {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.btn-text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-size: 1.2rem;
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-top: 38px;
+    text-align: center;
+  }
+}
+
+.btn:hover {
+  box-shadow: none;
+  transform: translateY(3px);
+}
+
+/*----------------------------------------------------------
+  reservation/shared
+----------------------------------------------------------*/
+.reserv-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  padding: 20px 40px 40px;
+  background-color: colors(grayish-base);
+  .form-content {
+    padding: 20px;
+    .radio-btn {
+      display: inline-block;
+      padding: 0 0.5em;
+    }
+  }
+}
+
+/*----------------------------------------------------------
+  reservation/index カレンダーページ
+----------------------------------------------------------*/
+.simple-calendar {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;  
+
+  .calendar-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .calendar-title {
+    padding: 0 2rem;
+    font-size: 2.8rem;
+    font-weight: 600;
+  }
+  th {
+    border: 1px solid;
+    border-color: colors(table-border);
+    background-color: colors(second);
+    color: colors(base);
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  .table-striped {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;  
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  td {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .day {
+    height: 2.6rem;
+    padding: 0;
+    border: 1px solid;
+    border-color: colors(table-border);
+    font-size: 2rem;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 1.4rem;
+    }
+  }
+  .today {
+    background-color: colors(base);
+    outline: 3px solid colors(accent);
+    outline-offset: -8px;
+    a {
+      &:hover {
+        background-color: colors(main);
+        transition: all, 0.2s;    
+      }
+    }
+  }
+  .past {
+    background-color: colors(past);
+    color: darken(colors(past), 20%);
+    a {
+      &:hover {
+        background-color: fadeout(colors(main), 50%);
+        transition: all, 0.2s;
+      }
+    }
+  }
+  .future {
+    background-color: colors(base);
+    a {
+      &:hover {
+        background-color: fadeout(colors(main), 50%);
+        transition: all, 0.2s;
+      }
+    }
+  }
+  .prev-month a {
+    display: none;
+  }
+  .next-month a {
+    display: none;
+  }
+}
+
+/*----------------------------------------------------------
+  reservation/show 時間選択ページ
+----------------------------------------------------------*/
+.timetable-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 40px;
+
+  .timetable-title {
+    font-size: 200%;
+    font-weight: 600;
+  }
+
+  .prev-day {
+    text-align: left;
+  }
+
+  .next-day {
+    text-align: right;
+  }
+}
+
+.timetable-container {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  .timetable {
+    border-collapse: collapse;
+    th {
+      width: auto;
+      height: 50px;
+      .hours-cell {
+        position: relative;
+        .hour-label {
+          position: absolute;
+          left: 0%;
+          bottom: -20%; 
+          transform: translate(-50%, -50%);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .p_num-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50px;
+    min-height: 50px;
+    background-color: colors(base);
+    outline: 3px solid colors(base);
+    .p_num_label {
+      min-width: 40px;
+      min-height: 40px;
+      border-radius: 5px;
+      color: white;
+      font-weight: 600;
+      font-size: 2em;
+      line-height: 40px;
+      text-align: center;
+    }
+  }
+  
+  .sticky-header {
+    position: sticky;
+    left: 0;
+    z-index: 100;
+  }
+
+  .p_num_1 {
+    background-color: colors(park1);
+  }
+  .p_num_2 {
+    background-color: colors(park2);
+  }
+  .p_num_3 {
+    background-color: colors(park3);
+  }
+  .p_num_4 {
+    background-color: colors(park4);
+  }
+
+  .cell {
+    min-width: 40px;
+    border-width: 1px;
+    border-style: solid dashed;
+    border-color: colors(table-border);
+    .reserved_bar {
+      width: 100%;
+      height: 80%;
+      color: transparent;
+    }
+    .button_to {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .time-submit {
+        display: block;
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        color: transparent;
+        font-size: 2em;
+        cursor: pointer;
+        transition: all, 0.2s;
+        &:hover {
+          background-color: fadeout(colors(main), 50%);
+          transition: all, 0.2s;
+        }
+      }
+    }
+  }
+}
+
+/*----------------------------------------------------------
+  reservation/confirm 確認ページ
+----------------------------------------------------------*/
+.confirm-table {
+  width: 100%;
+  .form-content {
+    th {
+      padding: 0.5em;
+    }
+    td {
+      padding: 0.5em;
+    }
+  }  
+}
+
+.confirm-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  .colored-btn, .white-btn {
+    margin: 3rem 3rem 0;
+  }
+}
+
+
+/*----------------------------------------------------------
+  users/index トップページ
+----------------------------------------------------------*/
+.reserv-info-content {
+  padding: 1.5em;
+  margin-bottom: 2em;
+  border-radius: 5px;
+  background-color: colors(grayish-base);
+
+  .info-title {
+    margin-bottom: 0.5em;
+    border-bottom: 3px solid;
+    border-color: colors(accent);
+    font-size: 1.5em;
+    font-weight: 400;
+  }
+  
+  .reserv-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .reserv-info {
+      width: 100%;
+      th {
+        padding: 0.5em;
+      }
+      td {
+        padding: 0.5em;
+      }
+    }
+  }
+  
+  .btn-content {
+    display: flex;
+    justify-content: right;
+  }
+}
+
+/*----------------------------------------------------------
+  users/show 利用者管理
+----------------------------------------------------------*/
+.user-info-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1.5em;
+  border-radius: 5px;
+  background-color: colors(grayish-base);
+
+  .user-info {
+    width: 100%;
+    th {
+      padding: 0.5em;
+    }
+    td {
+      padding: 0.5em;
+    }
+  }
+  
+  .btn-content {
+    display: flex;
+    justify-content: right;
+  }
+}
+
+/*----------------------------------------------------------
+  devise shared
+----------------------------------------------------------*/
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding: 2em 3em;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background-color: #dbdbdb;
+  .alert {
+    padding-bottom: 1em;
+    text-align: center;
+    color: colors(note);
+  }
+  .field {
+    padding-bottom: 0.8em;
+    .text-field {
+      width: 100%;
+    }
+  }    
+  .actions {
+    display: flex;
+    justify-content: center;
+  }
+  .links {
+    padding: 1em;
+    text-align: center;
+  }
+}
+
+.build-num {
+  display: flex;
+  .field {
+    margin-right: 3rem;
+  }
+}
+
+
+/*----------------------------------------------------------
+  Responsive Design
+----------------------------------------------------------*/
+/* タブレット表示時 */
+@media (min-width: 600px) and (max-width: 1024px) {
+  html {
+    font-size: 75%;
+  }
+  .logo {
+    width: 100%;
+  }
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+  html {
+    font-size: 75%;
+  }
+  .logo {
+    width: 100%;
+    text-align: center;
+  }
+  .nav {
+    display: block;
+  }
+  .nav-bar {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 10px;
+    li {
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+  .user-info-content {
+    display: block;
+  }
+  .btn-content {
+    padding-top: 1rem;
+  }
+  .reserv-content-wrapper {
+    display: block;
+  }
+  /* reservations/confirm */ 
+  .confirm-form {
+    flex-direction: column-reverse;
+    width: fit-content;
+    .colored-btn, .white-btn {
+      display: block;
+      margin: 2.6rem 0 0 0;
+    }
+  }
+}

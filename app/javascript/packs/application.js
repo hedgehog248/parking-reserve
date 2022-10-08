@@ -9,6 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 require("../room_select")
 require("../adjust_minute")
+require("../scrollable")
+require("../nav-bar")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
