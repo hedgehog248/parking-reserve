@@ -242,11 +242,6 @@ nav {
   }
 }
 
-.btn:hover {
-  box-shadow: none;
-  transform: translateY(3px);
-}
-
 /*----------------------------------------------------------
   reservation/shared
 ----------------------------------------------------------*/
@@ -324,31 +319,13 @@ nav {
     background-color: colors(base);
     outline: 3px solid colors(accent);
     outline-offset: -8px;
-    a {
-      &:hover {
-        background-color: colors(main);
-        transition: all, 0.2s;    
-      }
-    }
   }
   .past {
     background-color: colors(past);
     color: darken(colors(past), 20%);
-    a {
-      &:hover {
-        background-color: fadeout(colors(main), 50%);
-        transition: all, 0.2s;
-      }
-    }
   }
   .future {
     background-color: colors(base);
-    a {
-      &:hover {
-        background-color: fadeout(colors(main), 50%);
-        transition: all, 0.2s;
-      }
-    }
   }
   .prev-month a {
     display: none;
@@ -461,15 +438,11 @@ nav {
         display: block;
         width: 100%;
         border: none;
-        background-color: transparent;
+        background-color: colors(base);
         color: transparent;
         font-size: 2em;
         cursor: pointer;
         transition: all, 0.2s;
-        &:hover {
-          background-color: fadeout(colors(main), 50%);
-          transition: all, 0.2s;
-        }
       }
     }
   }
@@ -611,6 +584,39 @@ nav {
 /*----------------------------------------------------------
   Responsive Design
 ----------------------------------------------------------*/
+//////////////////////* hover *////////////////////////
+/* hover対応デバイスのとき */
+@media (hover: hover) {
+  .btn:hover {
+    box-shadow: none;
+    transform: translateY(3px);
+  }
+  .table-striped a:hover {
+    background-color: rgba(colors(main), 0.7);
+    transition: all, 0.2s;
+  }
+  .button_to .time-submit:hover {
+    background-color: colors(main);
+    transition: all, 0.2s;
+  }
+}
+/* hover非対応デバイスのとき */
+@media (hover: none) {
+  .btn:active {
+    box-shadow: none;
+    transform: translateY(3px);
+  }
+  .table-striped a:active {
+    background-color: rgba(colors(main), 0.7);
+    transition: all, 0.2s;
+  }
+  .button_to .time-submit:active {
+    background-color: colors(main);
+    transition: all, 0.2s;
+  }
+}
+
+//////////////////* View Port Size *////////////////////////
 /* タブレット表示時 */
 @media (min-width: 600px) and (max-width: 1024px) {
   html {
@@ -662,3 +668,6 @@ nav {
     }
   }
 }
+
+
+
