@@ -21,5 +21,6 @@ ja:
   time:
     formats:
       default: '%Y年%m月%d日(%a) %H:%M'
-      slashed: '%Y/%m/%d(%a) %H:%M'
+      year: '%Y年'
+      date: '%m月%d日(%a)'
       hidden_time: '%Y年%m月%d日(%a)'

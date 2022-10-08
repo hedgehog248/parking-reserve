@@ -364,18 +364,19 @@ nav {
 .timetable-heading {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-end;
   padding-top: 40px;
-
   .timetable-title {
-    font-size: 200%;
+    font-size: 2.4rem;
     font-weight: 600;
+    line-height: 2.8rem;
+    span {
+      font-size: 1.8rem;
+    }
   }
-
   .prev-day {
     text-align: left;
   }
-
   .next-day {
     text-align: right;
   }
@@ -388,20 +389,19 @@ nav {
   -webkit-overflow-scrolling: touch;
   .timetable {
     border-collapse: collapse;
-    th {
+    .hours-cell {
+      position: relative;
       width: auto;
       height: 50px;
-      .hours-cell {
-        position: relative;
-        .hour-label {
-          position: absolute;
-          left: 0%;
-          bottom: -20%; 
-          transform: translate(-50%, -50%);
-          font-weight: 400;
-        }
+      .hour-label {
+        position: absolute;
+        left: 0%;
+        bottom: -15%; 
+        transform: translate(-50%, -50%);
+        font-weight: 400;
       }
     }
+
   }
 
   .p_num-wrapper {

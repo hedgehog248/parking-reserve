@@ -10,7 +10,8 @@
       <%= link_to "<< 前日を表示する", reservation_path(@dtime.yesterday) %>
     </div>
     <div class="timetable-title">
-      <%= l @dtime, format: :hidden_time %>
+      <%= tag.span l @dtime, format: :year %><br>
+      <%= l @dtime, format: :date %>
     </div>
     <div class="next-day">
       <%= link_to "翌日を表示する >>", reservation_path(@dtime.tomorrow) %>
@@ -22,11 +23,11 @@
     <table class="timetable">
       <thead>
         <tr>
-          <%= tag.th %>
+          <%= tag.th class: "hours-cell" %>
           <% 24.times do |hour| %>
-            <%= tag.th(class: "hours-cell") {tag.div hour, class: "hour_label"} %>
+            <%= tag.th(class: "hours-cell") {tag.div hour, class: "hour-label"} %>
           <% end %>
-          <%= tag.th(class: "hours-cell") {tag.div 0, class: "hour_label"} %>
+          <%= tag.th(class: "hours-cell") {tag.div 0, class: "hour-label"} %>
         </tr>
       </thead>
 
