@@ -10,4 +10,5 @@ Rails.application.routes.draw do
       post 'confirm'
     end
   end
+  references :tickets, only: [:new, :create]
 end
