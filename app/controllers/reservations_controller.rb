@@ -20,15 +20,11 @@ class ReservationsController < ApplicationController
   end
 
   def confirm
-    if @reservation.invalid?
-      render :new
-    end
+    render :new if @reservation.invalid?
   end
 
   def create
-    if params[:back] || !@reservation.save
-      render :new
-    end
+    render :new if params[:back] || !@reservation.save
   end
 
   def destroy
