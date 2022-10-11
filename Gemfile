@@ -61,3 +61,5 @@ gem 'devise-i18n'
 gem 'pry-rails'
 gem 'rails-i18n'
 gem "simple_calendar", "~> 2.4"
+gem 'prawn'
+gem 'prawn-table'
