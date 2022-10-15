@@ -45,8 +45,12 @@ ActiveRecord::Schema.define(version: 2022_10_15_143925) do
   end
 
   create_table "tickets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "destination"
-    t.string "car_model"
+    t.string "building_num", null: false
+    t.string "room_num", null: false
+    t.string "destination", null: false
+    t.string "car_model", null: false
+    t.string "license_num", null: false
+    t.string "derivers_name", null: false
     t.bigint "reservations_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

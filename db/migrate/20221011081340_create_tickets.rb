@@ -1,9 +1,13 @@
 class CreateTickets < ActiveRecord::Migration[6.0]
   def change
     create_table :tickets do |t|
-      t.string     :destination
-      t.string     :car_model
-      t.references :reservations, null: false, foreign_keys: true
+      t.string     :building_num,  null: false
+      t.string     :room_num,      null: false
+      t.string     :destination,   null: false
+      t.string     :car_model,     null: false
+      t.string     :license_num,   null: false
+      t.string     :derivers_name, null: false
+      t.references :reservations,  null: false, foreign_keys: true
       t.timestamps
     end
   end
