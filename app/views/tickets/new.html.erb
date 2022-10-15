@@ -1,0 +1,41 @@
+<div class="main">
+  <h2 class="page-title">
+    許可証の作成
+  </h2>
+  <p class="message">
+    項目を入力して予約ボタンを押してください。<br>
+    空欄の場合は、空欄のまま書類が作成されます。<br>
+    印刷後ご自身で記入のうえ、管理事務所へご提出ください。
+  </p>
+
+  <%= form_with model: [@reservation, @ticket], format: "pdf", class: "ticket-form", local: true do |f| %>
+    <%# 既に決まっている情報 %>
+    <div class="form-content">
+      開始日時<br>
+      <%= l @reservation[:start_datetime] %>
+    </div>
+    <div class="form-content">
+      終了日時<br>
+      <%= l @reservation[:end_datetime] %>
+    </div>
+    <div class="form-content">
+      駐車場番号: <%= @reservation[:park_num] %>番
+    </div>
+
+    <%# 新たに必要な情報 %>
+    <div class="form-content">
+      <%= f.label :destination, "訪問先" %><br>
+      <%= f.text_field :destination, placeholder: "例)〇〇号棟△△号室 ✕✕" %>様方
+    </div>
+    <div class="form-content">
+      <%= f.label :car_model, "使用車輌" %><br>
+      <%= f.text_field :car_model %>
+    </div>
+    <div class="form-content">
+      <%= f.label :license_num, "車輌登録番号" %><br>
+      <%= f.text_field :license_num%>
+    </div>
+    <%= f.submit "書類を作成", class: 'colored-btn btn' %>
+  <% end %>
+  <%= render partial: "shared/backward_btn", locals: { linked_path: root_path, page: "トップページ" } %>
+</div>

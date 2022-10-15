@@ -44,6 +44,7 @@
         </div>
 
         <div class="btn-content">
+          <%= render partial: "shared/new_ticket_btn", locals: { reserv_id: reserv.id } %>
           <% confirm_msg = "削除後は元に戻せません。\nこの予約を削除しますか？\nよろしければ【OK】ボタンを押してください。" %>
           <%= render partial: "shared/delete_btn", locals: {
                       linked_path: reservation_path(reserv.id), 

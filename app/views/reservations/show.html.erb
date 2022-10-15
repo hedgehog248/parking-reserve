@@ -7,14 +7,14 @@
   <%# ナビゲータ %>
   <div class="timetable-heading">
     <div class="prev-day">    
-      <%= link_to "<< 前日を表示する", reservation_path(@dtime.yesterday) %>
+      <%= link_to "<< 前日を表示", reservation_path(@dtime.yesterday) %>
     </div>
     <div class="timetable-title">
       <%= tag.span l @dtime, format: :year %><br>
       <%= l @dtime, format: :date %>
     </div>
     <div class="next-day">
-      <%= link_to "翌日を表示する >>", reservation_path(@dtime.tomorrow) %>
+      <%= link_to "翌日を表示 >>", reservation_path(@dtime.tomorrow) %>
     </div>
   </div>
 
@@ -34,7 +34,7 @@
       <tbody>
         <% (1..4).each do |num| %> 
           <tr>
-            <th class="p_num-wrapper sticky-header"> 
+            <th class="p_num-wrapper"> 
               <%= tag.div(num, class: "p_num_label p_num_#{num}") %>
             </th>
             <% 24.times do |hour| %>
