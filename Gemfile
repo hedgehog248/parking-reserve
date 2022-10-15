@@ -64,3 +64,5 @@ gem "simple_calendar", "~> 2.4"
 gem 'prawn'
 gem 'prawn-table'
 gem 'responders'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
