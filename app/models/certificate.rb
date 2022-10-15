@@ -1,4 +1,4 @@
-class Ticket < ApplicationRecord
+class Certificate < ApplicationRecord
   belongs_to :reservation
   has_one_attached :pdf
 

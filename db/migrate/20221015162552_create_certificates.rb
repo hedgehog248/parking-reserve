@@ -1,6 +1,6 @@
-class CreateTickets < ActiveRecord::Migration[6.0]
+class CreateCertificates < ActiveRecord::Migration[6.0]
   def change
-    create_table :tickets do |t|
+    create_table :certificates do |t|
       t.string     :building_num,  null: false
       t.string     :room_num,      null: false
       t.string     :destination,   null: false

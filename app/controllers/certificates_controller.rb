@@ -1,18 +1,18 @@
-class TicketsController < ApplicationController
+class CertificatesController < ApplicationController
   before_action :set_reserv, only: [:new, :create]
   def index
   end
 
   def new
-    @ticket = Ticket.new
+    @certificate = Certificate.new
   end
 
   def create
-    ticket = params.require(:ticket).permit(:destination, :car_model, :license_num)
+    certificate = certificate_params
     respond_to do |format|
       format.pdf do
-        create_ticket = CreateTicket.new(@reservation, ticket).render
-        send_data create_ticket,
+        create_certificate = CreateCertificate.new(@reservation, certificate).render
+        send_data create_certificate,
           filename:    'parking_tickets.pdf',
           type:        'application/pdf',
           disposition: 'inline'
@@ -26,7 +26,7 @@ class TicketsController < ApplicationController
     @reservation = Reservation.find(params[:reservation_id])
   end
 
-  def ticket_params
-    params.permit(:destination, :car_model, :license_num)
+  def certificate_params
+    params.require.permit(:destination, :car_model, :license_num)
   end
 end

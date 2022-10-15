@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_15_143925) do
+ActiveRecord::Schema.define(version: 2022_10_15_162552) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,18 +33,7 @@ ActiveRecord::Schema.define(version: 2022_10_15_143925) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "park_num", null: false
-    t.datetime "start_datetime", null: false
-    t.datetime "end_datetime", null: false
-    t.bigint "user_id", null: false
-    t.datetime "start_date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_reservations_on_user_id"
-  end
-
-  create_table "tickets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "certificates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "building_num", null: false
     t.string "room_num", null: false
     t.string "destination", null: false
@@ -54,7 +43,18 @@ ActiveRecord::Schema.define(version: 2022_10_15_143925) do
     t.bigint "reservations_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["reservations_id"], name: "index_tickets_on_reservations_id"
+    t.index ["reservations_id"], name: "index_certificates_on_reservations_id"
+  end
+
+  create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "park_num", null: false
+    t.datetime "start_datetime", null: false
+    t.datetime "end_datetime", null: false
+    t.bigint "user_id", null: false
+    t.datetime "start_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

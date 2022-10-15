@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     collection do
       post 'confirm'
     end
-    resources :tickets, only: [:index, :new, :create]
+    resources :certificates, only: [:index, :new, :create]
   end
 end

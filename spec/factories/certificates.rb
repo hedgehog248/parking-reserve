@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :ticket do
+  factory :certificate do
     
   end
 end

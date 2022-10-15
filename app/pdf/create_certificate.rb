@@ -1,11 +1,11 @@
-class CreateTicket < Prawn::Document
+class CreateCertificate < Prawn::Document
   require 'prawn/measurement_extensions' # 長さの単位計算をできるようにする
   PAGE_WIDTH = 277.mm
   PAGE_HEIGHT = 190.mm
 
-  def initialize(reservation, ticket)
+  def initialize(reservation, certificate)
     @reservation = reservation
-    @ticket = ticket
+    @certificate = certificate
     # 予約日時を変数に振り分ける
     st = separate_date(@reservation[:start_datetime])
     ed = separate_date(@reservation[:end_datetime])
@@ -42,12 +42,12 @@ class CreateTicket < Prawn::Document
     # タイトル
     pad_top(30) {text "ABCマンション", size: 24, align: :center}
     text "来客用駐車場　使用許可証", size: 40, align: :center
-    text "（区画 No.#{@reservation[:park_num]}）", size: 30, align: :center
+    text "(区画 No.#{@reservation[:park_num]})", size: 30, align: :center
 
     # 利用者記入欄
     move_down 20
-    if ticket[:destination].present?     # distinationが入力されたかどうか
-      destination = "#{ticket[:destination]}様方"
+    if certificate[:destination].present?     # distinationが入力されたかどうか
+      destination = "#{certificate[:destination]}様方"
     else
       destination = "______号棟______号室___________________様方"
     end
