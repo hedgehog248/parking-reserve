@@ -8,6 +8,6 @@ class Certificate < ApplicationRecord
     validates :destination
     validates :car_model
     validates :license_num
-    validates :derivers_name
+    validates :drivers_name
   end
 end

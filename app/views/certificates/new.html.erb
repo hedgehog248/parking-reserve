@@ -8,7 +8,9 @@
     (使用許可証に印字されない情報もございます。)
   </p>
 
-  <%= form_with model: [@reservation, @certificate], format: "pdf", class: "certificate-form", local: true do |f| %>
+  <%= form_with model: [@reservation, @certificate], class: "certificate-form", local: true do |f| %>
+    <%= render "shared/error_messages", resource: f.object %>
+
     <%# 既に決まっている情報 %>
     <div class="form-content">
       開始日時<br>
@@ -40,6 +42,10 @@
     <div class="form-content">
       <%= f.label :license_num, "車輌登録番号" %><br>
       <%= f.text_field :license_num, placeholder: "例)習志野●● あ 00-00" %>
+    </div>
+    <div class="form-content">
+      <%= f.label :drivers_name, "使用者氏名" %><br>
+      <%= f.text_field :drivers_name %>
     </div>
     <%= f.submit "申請", class: 'white-btn btn' %>
   <% end %>
