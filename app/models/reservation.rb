@@ -3,7 +3,7 @@ class Reservation < ApplicationRecord
   include ReservationsHelper
 
   belongs_to :user
-  has_one    :ticket
+  has_one    :certificate
 
   with_options presence: true do
     validates :park_num

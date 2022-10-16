@@ -1,6 +1,13 @@
 class CertificatesController < ApplicationController
-  before_action :set_reserv, only: [:new, :create]
+  before_action :set_reserv, only: [:index, :new, :create]
+
+  # PDFの表示をindexアクションに記述
   def index
+    generate_certificate = GenerateCertificate.new(@reservation).render
+    send_data generate_certificate,
+      filename:    'parking_tickets.pdf',
+      type:        'application/pdf',
+      disposition: 'inline'
   end
 
   def new
@@ -28,13 +35,5 @@ class CertificatesController < ApplicationController
       :building_num, :room_num, :destination, :car_model, :license_num, :drivers_name
       ).merge(reservation_id: params[:reservation_id]
     )
-  end
-
-  def create_pdf
-    create_certificate = CreateCertificate.new(@reservation, @certificate).render
-    send_data create_certificate,
-      filename:    'parking_tickets.pdf',
-      type:        'application/pdf',
-      disposition: 'inline'
   end
 end
