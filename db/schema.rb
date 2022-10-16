@@ -39,11 +39,11 @@ ActiveRecord::Schema.define(version: 2022_10_15_162552) do
     t.string "destination", null: false
     t.string "car_model", null: false
     t.string "license_num", null: false
-    t.string "derivers_name", null: false
-    t.bigint "reservations_id", null: false
+    t.string "drivers_name", null: false
+    t.bigint "reservation_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["reservations_id"], name: "index_certificates_on_reservations_id"
+    t.index ["reservation_id"], name: "index_certificates_on_reservation_id"
   end
 
   create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

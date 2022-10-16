@@ -6,8 +6,8 @@ class CreateCertificates < ActiveRecord::Migration[6.0]
       t.string     :destination,   null: false
       t.string     :car_model,     null: false
       t.string     :license_num,   null: false
-      t.string     :derivers_name, null: false
-      t.references :reservations,  null: false, foreign_keys: true
+      t.string     :drivers_name, null: false
+      t.references :reservation,  null: false, foreign_keys: true
       t.timestamps
     end
   end
