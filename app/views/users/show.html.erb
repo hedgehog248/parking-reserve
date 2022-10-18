@@ -43,5 +43,28 @@
     </div>
   </div>
 
+  <h2 class="page-title">
+    車輌情報
+  </h2>
+  <%= link_to "新規登録", new_car_path %>
+  <% (@user.cars).each do |car| %>
+    <div class="user-info-content">
+      <div class="left-content">
+        <table class="user-info">
+          <tr>
+            <td>
+              <%= car[:nickname] %>
+            </td>
+            <td>
+              <%= car[:model] %>
+            </td>
+            <td>
+              <%= car[:license_num] %>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  <% end %>
   <%= render partial: "shared/backward_btn", locals: { linked_path: root_path, page: "トップページ" } %>
 </div>

@@ -6,7 +6,7 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     if @car.save
-      redirect_to root_path
+      redirect_to user_path(@car.user.id)
     else
       render :new
     end
