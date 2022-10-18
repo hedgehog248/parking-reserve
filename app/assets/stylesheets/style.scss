@@ -497,10 +497,6 @@ nav {
   }
   
   .reserv-content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
     .reserv-info {
       width: 100%;
       th {
@@ -651,8 +647,12 @@ nav {
       font-size: 1rem;
     }
   }
+  .user-info-content {
+    display: block;
+  }
   /* アイコン付きボタンの調整 */
   .square {
+    margin: 10px 0 0 30px;
     .btn-icon {
     font-size: 2.6rem;
     }
@@ -692,7 +692,7 @@ nav {
     display: block;
   }
   .btn-content {
-    padding-top: 1rem;
+    flex-wrap: wrap;
   }
   .reserv-content-wrapper {
     display: block;
@@ -708,6 +708,7 @@ nav {
   }
   /* アイコン付きボタンの調整 */
   .square {
+    margin: 20px;
     .btn-icon {
     font-size: 2.6rem;
     }

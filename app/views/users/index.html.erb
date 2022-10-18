@@ -2,7 +2,8 @@
   <div class="message">
     <%= current_user.last_name %>さん、こんにちは！<br>
     <% if @reservations.present? %>
-      現在の予約状況は以下の通りです。
+      現在の予約状況は以下の通りです。<br>
+      終了日時を過ぎたものは自動で削除されます。
     <% else %>
       現在、予約はありません。
     <% end %>
@@ -45,8 +46,9 @@
 
         <div class="btn-content">
           <%# 「許可証の申請ボタン」、申請済みなら「許可証表示ボタン」と「申請内容の変更ボタン」 %>
-          <% if reserv.certificate.id.present? %> 
+          <% if reserv.certificate.present? %> 
             <%= render partial: "shared/generate_pdf_btn", locals: { reserv_id: reserv.id } %>
+            <%= render partial: "shared/edit_certificate_btn", locals: { reserv_id: reserv.id, certif_id: reserv.certificate.id } %>
           <% else %>
             <%= render partial: "shared/new_certificate_btn", locals: { reserv_id: reserv.id } %>
           <% end %>

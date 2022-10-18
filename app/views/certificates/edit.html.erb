@@ -1,10 +1,10 @@
 <div class="main">
   <h2 class="page-title">
-    使用許可証の申請
+    使用許可証申請内容の編集
   </h2>
   <p class="message">
-    すべての項目を入力して申請ボタンを押してください。<br>
-    申請後、使用許可証表示ボタンが作成されるのでダウンロードまたは印刷してご利用ください。<br>
+    変更後、変更の申請ボタンを押してください。<br>
+    申請後、使用許可証表示ボタンからダウンロードまたは印刷してご利用ください。<br>
     (使用許可証に印字されない情報もございます。)
   </p>
 
@@ -47,7 +47,7 @@
       <%= f.label :drivers_name, "使用者氏名" %><br>
       <%= f.text_field :drivers_name %>
     </div>
-    <%= f.submit "申請", class: 'white-btn btn' %>
+    <%= f.submit "変更の申請", class: 'white-btn btn' %>
   <% end %>
   <%= render partial: "shared/backward_btn", locals: { linked_path: root_path, page: "トップページ" } %>
 </div>

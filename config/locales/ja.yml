@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       reservation: 予約
+      certificate: 使用許可証の申請
     attributes:
       user:
         building_num: 棟番号
@@ -12,6 +13,13 @@ ja:
         park_num: 駐車場番号
         start_datetime: 開始日時
         end_datetime: 終了日時
+      certificate:
+        building_num: 棟番号
+        room_num: 部屋番号
+        destination: 訪問先
+        car_model: 使用車輌（車種）
+        license_num: 車輌登録番号
+        drivers_name: 使用者氏名
     errors:
       messages:
   simple_calendar:

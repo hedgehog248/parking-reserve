@@ -1,5 +1,5 @@
 class CertificatesController < ApplicationController
-  before_action :set_reserv, only: [:index, :new, :create]
+  before_action :set_reserv, only: [:index, :new, :create, :edit, :update]
 
   # PDFの表示をindexアクションに記述
   def index
@@ -16,14 +16,27 @@ class CertificatesController < ApplicationController
 
   def create
     @certificate = Certificate.new(certificate_params)
-    if @certificate.valid?
-      @certificate.save
-      redirect_to root_path and return
+    if @certificate.save
+      redirect_to root_path
     else
       render :new
     end
   end
 
+  def edit
+    @certificate = @reservation.certificate
+  end
+
+  def update
+    binding.pry
+    @certificate = Certificate.find(params[:id])
+    if @certificate.update(certificate_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+  
   private
 
   def set_reserv

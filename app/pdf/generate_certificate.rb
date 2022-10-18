@@ -77,6 +77,6 @@ class GenerateCertificate < Prawn::Document
     draw_text "ABCマンション管理組合", at: [200.mm, 20.mm], size: 16
 
     # Time Stamp
-    draw_text "#{reservation.certificate.created_at}", at: [200.mm, 10.mm], size: 10
+    draw_text "申請日時：#{reservation.certificate.updated_at}", at: [200.mm, 10.mm], size: 10
   end
 end
