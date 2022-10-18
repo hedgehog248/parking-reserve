@@ -1,0 +1,30 @@
+<div class="main">
+  <h2 class="page-title">車輌情報 新規登録</h2>
+  <p class="message">
+    よく使用する車の情報を登録できます。<br>
+    許可証申請の際に登録した車輌情報を利用できるようになります。
+  </p>
+
+  <%= form_with model: @car, local: true, class: "car-form" do |f| %>
+  <div class="reserv-form">
+    <%= render "shared/error_messages", resource: f.object %>
+    <table class="confirm-table">
+      <tr class="form-content">
+        <%= tag.th (f.label :nickname, "識別用ニックネーム") %>
+        <%= tag.td (f.text_field :nickname, placeholder: "例)通勤用など", autofocus: true) %>
+      </tr>
+      <tr class="form-content">
+        <%= tag.th (f.label :model, "使用車輌（車種）") %>
+        <%= tag.td (f.text_field :model) %>
+      </tr>
+      <tr class='form-content'>
+        <%= tag.th (f.label :license_num, "車輌登録番号") %>
+        <%= tag.td (f.text_field :license_num) %>
+      </tr>
+    </table>
+      <%= f.submit '登録', class: "colored-btn btn" %>
+    <% end %>
+  </div>
+  <%= render partial: "shared/backward_btn", locals: { linked_path: root_path, page: "トップページ" } %>
+
+</div>
