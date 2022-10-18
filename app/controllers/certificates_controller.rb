@@ -5,9 +5,9 @@ class CertificatesController < ApplicationController
   def index
     generate_certificate = GenerateCertificate.new(@reservation).render
     send_data generate_certificate,
-      filename:    'parking_tickets.pdf',
-      type:        'application/pdf',
-      disposition: 'inline'
+              filename: 'parking_tickets.pdf',
+              type: 'application/pdf',
+              disposition: 'inline'
   end
 
   def new
@@ -28,7 +28,6 @@ class CertificatesController < ApplicationController
   end
 
   def update
-    binding.pry
     @certificate = Certificate.find(params[:id])
     if @certificate.update(certificate_params)
       redirect_to root_path
@@ -36,7 +35,7 @@ class CertificatesController < ApplicationController
       render :edit
     end
   end
-  
+
   private
 
   def set_reserv
@@ -46,7 +45,6 @@ class CertificatesController < ApplicationController
   def certificate_params
     params.require(:certificate).permit(
       :building_num, :room_num, :destination, :car_model, :license_num, :drivers_name
-      ).merge(reservation_id: params[:reservation_id]
-    )
+    ).merge(reservation_id: params[:reservation_id])
   end
 end

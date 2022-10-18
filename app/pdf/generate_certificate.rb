@@ -4,8 +4,8 @@ class GenerateCertificate < Prawn::Document
   PAGE_HEIGHT = 190.mm
 
   def separate_date(date)
-    wday = %w"日 月 火 水 木 金 土"[date.wday]
-    ary = [date.year, date.month, date.day, wday, date.hour, date.min]
+    wday = %w[日 月 火 水 木 金 土][date.wday]
+    [date.year, date.month, date.day, wday, date.hour, date.min]
   end
 
   def initialize(reservation)
@@ -15,17 +15,17 @@ class GenerateCertificate < Prawn::Document
 
     # 新規PDF作成
     super(page_size: 'A4',
-      page_layout: :landscape,
-      margin: 10.mm,
-      compress: true
+          page_layout: :landscape,
+          margin: 10.mm,
+          compress: true
     )
 
     # 日本語フォントをデフォルトに設定
     font_families.update(
       'IPA Sans' => {
         normal: 'app/assets/fonts/ipaexg.ttf'
-        }
-      )
+      }
+    )
     font 'IPA Sans'
     font_size 14
     default_leading 12
@@ -43,8 +43,8 @@ class GenerateCertificate < Prawn::Document
     end
 
     # タイトル
-    pad_top(30) {text "ABCマンション", size: 24, align: :center}
-    text "来客用駐車場　使用許可証", size: 40, align: :center
+    pad_top(30) { text 'ABCマンション', size: 24, align: :center }
+    text '来客用駐車場　使用許可証', size: 40, align: :center
     text "(区画 No.#{reservation[:park_num]})", size: 30, align: :center
 
     # 利用者記入欄
@@ -53,14 +53,14 @@ class GenerateCertificate < Prawn::Document
     room_num = reservation.certificate.room_num
     destination = reservation.certificate.destination
 
-    data = [["訪問先", "#{building_num}号棟 #{room_num}号室 #{destination}様方"],
-            ["停車日時", "#{st[0]}年 #{st[1]}月#{st[2]}日(#{st[3]}) #{st[4]}時#{st[5]}分〜"],
-            ["", "#{ed[0]}年 #{ed[1]}月#{ed[2]}日(#{ed[3]}) #{ed[4]}時#{ed[5]}分"]]
+    data = [['訪問先', "#{building_num}号棟 #{room_num}号室 #{destination}様方"],
+            ['停車日時', "#{st[0]}年 #{st[1]}月#{st[2]}日(#{st[3]}) #{st[4]}時#{st[5]}分〜"],
+            ['', "#{ed[0]}年 #{ed[1]}月#{ed[2]}日(#{ed[3]}) #{ed[4]}時#{ed[5]}分"]]
     table(data, position: :center) do
       table_font = 22
       cells.borders = []
       cells.size = table_font
-      columns(0).padding = [table_font / 2, table_font * 2, table_font / 10, 0] 
+      columns(0).padding = [table_font / 2, table_font * 2, table_font / 10, 0]
       columns(1).padding = [table_font / 2, 0, table_font / 10, 0]
     end
 
@@ -74,7 +74,7 @@ class GenerateCertificate < Prawn::Document
     end
 
     # 発行者名
-    draw_text "ABCマンション管理組合", at: [200.mm, 20.mm], size: 16
+    draw_text 'ABCマンション管理組合', at: [200.mm, 20.mm], size: 16
 
     # Time Stamp
     draw_text "申請日時：#{reservation.certificate.updated_at}", at: [200.mm, 10.mm], size: 10
