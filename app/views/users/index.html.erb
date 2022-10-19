@@ -18,28 +18,16 @@
         <div class="left-content">
           <table class="reserv-info">
             <tr>
-              <th>
-                開始日時
-              </th>
-              <td>
-                <%= l reserv[:start_datetime] %>
-              </td>
+              <%= tag.th "開始日時" %>
+              <%= tag.td l reserv[:start_datetime] %>
             </tr>
             <tr>
-              <th>
-                終了日時
-              </th>
-              <td>
-                <%= l reserv[:end_datetime] %>
-              </td>
+              <%= tag.th "終了日時" %>
+              <%= tag.td l reserv[:end_datetime] %>
             </tr>
             <tr>
-              <th>
-                駐車場番号
-              </th>
-              <td>
-                <%= reserv[:park_num] %>番
-              </td>
+              <%= tag.th "駐車場番号" %>
+              <%= tag.td "#{reserv[:park_num]}番" %>
             </tr>
           </table>
         </div>
@@ -47,7 +35,7 @@
         <div class="btn-content">
           <%# 「許可証の申請ボタン」、申請済みなら「許可証表示ボタン」と「申請内容の変更ボタン」 %>
           <% if reserv.certificate.present? %> 
-            <%= render partial: "shared/generate_pdf_btn", locals: { reserv_id: reserv.id } %>
+            <%= render partial: "shared/generate_pdf_btn", locals: { reserv_id: reserv.id, certif_id: reserv.certificate.id } %>
             <%= render partial: "shared/edit_certificate_btn", locals: { reserv_id: reserv.id, certif_id: reserv.certificate.id } %>
           <% else %>
             <%= render partial: "shared/new_certificate_btn", locals: { reserv_id: reserv.id } %>

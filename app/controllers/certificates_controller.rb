@@ -1,8 +1,8 @@
 class CertificatesController < ApplicationController
-  before_action :set_reserv, only: [:index, :new, :create, :edit, :update]
-
-  # PDFの表示をindexアクションに記述
-  def index
+  before_action :set_reserv
+  
+  # PDFの表示をshowアクションに記述
+  def show
     generate_certificate = GenerateCertificate.new(@reservation).render
     send_data generate_certificate,
               filename: 'parking_tickets.pdf',
