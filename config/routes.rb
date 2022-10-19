@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     collection do
       post 'confirm'
     end
-    resources :certificates, only: [:index, :new, :create, :edit, :update]
+    resources :certificates, only: [:show, :new, :create, :edit, :update]
   end
   resources :cars, only: [:new, :create, :edit, :update, :destroy]
 end
