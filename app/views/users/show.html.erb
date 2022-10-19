@@ -43,26 +43,32 @@
     </div>
   </div>
 
-  <h2 class="page-title">
-    車輌情報
-  </h2>
-  <%= link_to "新規登録", new_car_path %>
+  <div class="mycar-title-wrapper">
+    <h3 class="mycar-title">
+      車輌情報
+    </h3>
+    <%= link_to "新規登録", new_car_path %>
+  </div>
   <% (@user.cars).each do |car| %>
-    <div class="user-info-content">
-      <div class="left-content">
-        <table class="user-info">
-          <tr>
-            <td>
-              <%= car[:nickname] %>
-            </td>
-            <td>
-              <%= car[:model] %>
-            </td>
-            <td>
-              <%= car[:license_num] %>
-            </td>
-          </tr>
-        </table>
+    <div class="mycar-content">
+      <table class="mycar-info">
+        <tr>
+          <%= tag.th car[:nickname] %>
+          <%= tag.td car[:model] %>
+        </tr>
+        <tr>
+          <%= tag.th %>
+          <%= tag.td car[:license_num] %>
+        </tr>
+      </table>
+
+      <div class="btn-content">
+        <%= render partial: "shared/edit_btn", locals: { linked_path: edit_car_path(car.id) } %>
+        <%# confirm_msg = "#{car.nickname}を削除しますか？\nよろしければ【OK】ボタンを押してください。" %>
+        <%#= render partial: "shared/delete_btn", locals: {
+                            linked_path: user_registration_path, 
+                            confirm_msg: confirm_msg
+        } %>
       </div>
     </div>
   <% end %>

@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     end
     resources :certificates, only: [:index, :new, :create, :edit, :update]
   end
-  resources :cars, only: [:new, :create]
+  resources :cars, only: [:new, :create, :edit, :update]
 end
