@@ -522,10 +522,7 @@ nav {
   users/show 利用者管理
 ----------------------------------------------------------*/
 .user-info-content {
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: flex-end;
-  padding: 1.5em;
+  padding: 2rem;
   border-radius: 5px;
   background-color: colors(grayish-base);
 
@@ -534,10 +531,10 @@ nav {
     width: 100%;
     font-size: 1.6rem;
     th {
-      padding: 0.5em;
+      padding: 0.5rem;
     }
     td {
-      padding: 0.5em;
+      padding: 0.5rem;
     }
   }
   
@@ -547,7 +544,38 @@ nav {
   }
 }
 
+.mycar-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  .mycar-title {
+    color: colors(accent);
+  }
+}
 
+.mycar-content {
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border-radius: 5px;
+  background-color: colors(grayish-base);
+  .mycar-info {
+    margin-bottom: 2rem;
+    width: 100%;
+    font-size: 1.6rem;
+    th {
+      padding: 0.5rem;
+      width: 40%;
+    }
+    td {
+      padding: 0.5rem;
+    }
+  }
+  
+  .btn-content {
+    display: flex;
+    justify-content: right;
+  }
+}
 /*----------------------------------------------------------
   devise shared
 ----------------------------------------------------------*/
