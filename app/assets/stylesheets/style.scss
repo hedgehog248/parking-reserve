@@ -547,7 +547,7 @@ nav {
 .mycar-title-wrapper {
   display: flex;
   justify-content: space-between;
-  margin-top: 4rem;
+  margin: 3rem 0 1rem 0;
   .mycar-title {
     color: colors(accent);
   }
@@ -685,7 +685,7 @@ nav {
     display: block;
   }
   /* アイコン付きボタンの調整 */
-  .reserv-info-content {
+  .reserv-info-content, .user-info-content, .mycar-content {
     .btn-content {
       justify-content: space-between;
     }
@@ -751,7 +751,7 @@ nav {
     }
   }
   /* アイコン付きボタンの調整 */
-  .reserv-info-content {
+  .reserv-info-content, .user-info-content, .mycar-content {
     .btn-content {
       display: flex;
       flex-direction: column;
