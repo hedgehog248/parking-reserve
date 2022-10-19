@@ -3,6 +3,7 @@ ja:
     models:
       reservation: 予約
       certificate: 使用許可証の申請
+      car: 車輌情報
     attributes:
       user:
         building_num: 棟番号
@@ -20,6 +21,10 @@ ja:
         car_model: 使用車輌（車種）
         license_num: 車輌登録番号
         drivers_name: 使用者氏名
+      car:
+        nickname: 識別用ニックネーム
+        model: 使用車輌(車種)
+        license_num: 車輌登録番号
     errors:
       messages:
   simple_calendar:

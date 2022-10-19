@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :reservations, dependent: :destroy
+  has_many :cars, dependent: :destroy
 
   with_options presence: true do
     validates :building_num
