@@ -26,6 +26,11 @@
 
     <%# 新たに必要な情報 %>
     <div class="form-content">
+      <%= f.label :dest_id, "訪問先の入力" %><br>
+      <%= f.select :dest_id, options_for_select({"自宅" => 1}), include_blank: "空欄[新規で入力する]" %>
+    </div>
+    
+    <div class="form-content">
       <%= f.text_field :building_num, placeholder: "例)○○" %>号棟
     </div>
     <div class="form-content">
@@ -37,7 +42,8 @@
     </div>
 
     <div class="form-content">
-      <%= f.collection_select :car_id, @cars, :id, :nickname, include_blank: "登録車輌から選択する" %>
+      <%= f.label :car_id, "使用車輌の入力" %><br>
+      <%= f.collection_select :car_id, @cars, :id, :nickname, include_blank: "空欄[新規で入力する]" %>
     </div>
 
     <div class="form-content">

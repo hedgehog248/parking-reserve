@@ -30,9 +30,10 @@ class CarsController < ApplicationController
     car.destroy
     redirect_to user_path(current_user.id)
   end
+  
   private
 
   def car_params
-    params.require(:car).permit(:nickname, :model, :license_num).merge(user_id: current_user.id)
+    params.require(:car).permit(:nickname, :model, :license_num, :drivers_name).merge(user_id: current_user.id)
   end
 end

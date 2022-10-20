@@ -5,5 +5,6 @@ class Car < ApplicationRecord
     validates :nickname
     validates :model
     validates :license_num
+    validates :drivers_name
   end
 end
