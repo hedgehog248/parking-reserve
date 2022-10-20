@@ -12,6 +12,8 @@ class CertificatesController < ApplicationController
 
   def new
     @certificate = Certificate.new
+    @cars = Car.where(user_id: current_user.id)
+    gon.cars = @cars
   end
 
   def create
