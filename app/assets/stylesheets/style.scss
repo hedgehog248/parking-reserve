@@ -708,6 +708,14 @@ nav {
   .user-info-content {
     display: block;
   }
+  /* certificate shared */ 
+  .certificate-form {
+    padding: 1rem;
+    .form-contents-wrapper {
+      width: 100%;
+      max-width: 680px;
+    }
+  }
   /* アイコン付きボタンの調整 */
   .reserv-info-content, .user-info-content, .mycar-content {
     .btn-content {
@@ -774,6 +782,30 @@ nav {
       margin: 2.6rem 0 0 0;
     }
   }
+  /* certificate shared */ 
+  .certificate-form {
+    padding: 1rem;
+    .form-contents-wrapper {
+      display: block;
+      width: 100%;
+      input {
+        width: 100%;
+      }
+    }
+    .build-num {
+      display: flex;
+      justify-content: left;
+      input {
+        width: 50%;
+      }
+    }
+    .right-container {
+      .destination {
+        width: calc(100% - 2rem - 1rem);
+      }  
+    }
+  }
+
   /* アイコン付きボタンの調整 */
   .reserv-info-content, .user-info-content, .mycar-content {
     .btn-content {
