@@ -27,14 +27,14 @@ function selectDestination() {
 
   selectDestList.addEventListener('change',function() {
     const selectedIndex = this.selectedIndex
-    if (selectedIndex == 0) {
-      buildNum.value = "";
-      roomNum.value = "";
-      destination.value = "";
-    } else {
+    if (selectedIndex == 1) {
       buildNum.value = gon.user.building_num;
       roomNum.value = gon.user.room_num;
       destination.value = gon.user.last_name;
+    } else {
+      buildNum.value = "";
+      roomNum.value = "";
+      destination.value = "";
     }
   })
 }

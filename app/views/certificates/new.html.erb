@@ -8,57 +8,7 @@
     (使用許可証に印字されない情報もございます。)
   </p>
 
-  <%= form_with model: [@reservation, @certificate], class: "certificate-form", local: true do |f| %>
-    <%= render "shared/error_messages", resource: f.object %>
+  <%= render partial: "shared/certif_form", locals: { reservation: @reservation, certificate: @certificate, cars: @cars } %>
 
-    <%# 既に決まっている情報 %>
-    <div class="form-content">
-      開始日時<br>
-      <%= l @reservation[:start_datetime] %>
-    </div>
-    <div class="form-content">
-      終了日時<br>
-      <%= l @reservation[:end_datetime] %>
-    </div>
-    <div class="form-content">
-      駐車場番号: <%= @reservation[:park_num] %>番
-    </div>
-
-    <%# 新たに必要な情報 %>
-    <div class="form-content">
-      <%= f.label :dest_id, "訪問先の入力" %><br>
-      <%= f.select :dest_id, options_for_select({"自宅" => 1}), include_blank: "空欄[新規で入力する]" %>
-    </div>
-    
-    <div class="form-content">
-      <%= f.text_field :building_num, placeholder: "例)○○" %>号棟
-    </div>
-    <div class="form-content">
-      <%= f.text_field :room_num, placeholder: "例)△△" %>号室
-    </div>
-    <div class="form-content">
-      <%= f.label :destination, "訪問先" %><br>
-      <%= f.text_field :destination, placeholder: "例)✕✕" %>様方
-    </div>
-
-    <div class="form-content">
-      <%= f.label :car_id, "使用車輌の入力" %><br>
-      <%= f.collection_select :car_id, @cars, :id, :nickname, include_blank: "空欄[新規で入力する]" %>
-    </div>
-
-    <div class="form-content">
-      <%= f.label :car_model, "使用車輌(車種)" %><br>
-      <%= f.text_field :car_model, placeholder: "例)HONDA プリウス" %>
-    </div>
-    <div class="form-content">
-      <%= f.label :license_num, "車輌登録番号" %><br>
-      <%= f.text_field :license_num, placeholder: "例)習志野●● あ 00-00" %>
-    </div>
-    <div class="form-content">
-      <%= f.label :drivers_name, "使用者氏名" %><br>
-      <%= f.text_field :drivers_name %>
-    </div>
-    <%= f.submit "申請", class: 'white-btn btn' %>
-  <% end %>
   <%= render partial: "shared/backward_btn", locals: { linked_path: root_path, page: "トップページ" } %>
 </div>

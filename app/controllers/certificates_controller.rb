@@ -53,7 +53,13 @@ class CertificatesController < ApplicationController
   end
 
   def set_carlist
-    @cars = Car.where(user_id: current_user.id)
+    @cars = Car.where(user_id: current_user.id).to_a
+    void_option = Car.new(
+      id: 0, nickname: "[新規で入力]", 
+      model: "", license_num: "", 
+      drivers_name: ""
+    )
+    @cars << void_option
     gon.cars = @cars
     gon.user = current_user
   end
