@@ -48,14 +48,19 @@
   </div>
   <% (@user.cars).each do |car| %>
     <div class="mycar-content">
+      <%= tag.div car[:nickname] %>
       <table class="mycar-info">
         <tr>
-          <%= tag.th car[:nickname] %>
+          <%= tag.th "使用車輌（車種）" %>
           <%= tag.td car[:model] %>
         </tr>
         <tr>
-          <%= tag.th %>
+          <%= tag.th "車両登録番号"%>
           <%= tag.td car[:license_num] %>
+        </tr>
+        <tr>
+          <%= tag.th "使用者氏名" %>
+          <%= tag.td car[:drivers_name] %>
         </tr>
       </table>
 

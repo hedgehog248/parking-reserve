@@ -12,6 +12,7 @@ class CertificatesController < ApplicationController
 
   def new
     @certificate = Certificate.new
+    set_carlist
   end
 
   def create
@@ -19,12 +20,14 @@ class CertificatesController < ApplicationController
     if @certificate.save
       redirect_to root_path
     else
+      set_carlist
       render :new
     end
   end
 
   def edit
     @certificate = @reservation.certificate
+    set_carlist
   end
 
   def update
@@ -32,6 +35,7 @@ class CertificatesController < ApplicationController
     if @certificate.update(certificate_params)
       redirect_to root_path
     else
+      set_carlist
       render :edit
     end
   end
@@ -46,5 +50,17 @@ class CertificatesController < ApplicationController
     params.require(:certificate).permit(
       :building_num, :room_num, :destination, :car_model, :license_num, :drivers_name
     ).merge(reservation_id: params[:reservation_id])
+  end
+
+  def set_carlist
+    @cars = Car.where(user_id: current_user.id).to_a
+    void_option = Car.new(
+      id: 0, nickname: "[新規で入力]", 
+      model: "", license_num: "", 
+      drivers_name: ""
+    )
+    @cars << void_option
+    gon.cars = @cars
+    gon.user = current_user
   end
 end

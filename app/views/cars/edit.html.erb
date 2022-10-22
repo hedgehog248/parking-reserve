@@ -17,6 +17,10 @@
         <%= tag.th (f.label :license_num, "車輌登録番号") %>
         <%= tag.td (f.text_field :license_num) %>
       </tr>
+      <tr class='form-content'>
+        <%= tag.th (f.label :drivers_name, "使用者氏名") %>
+        <%= tag.td (f.text_field :drivers_name) %>
+      </tr>
     </table>
       <%= f.submit '登録', class: "colored-btn btn" %>
     <% end %>
