@@ -1,6 +1,6 @@
 class CertificatesController < ApplicationController
   before_action :set_reserv
-  
+
   # PDFの表示をshowアクションに記述
   def show
     generate_certificate = GenerateCertificate.new(@reservation).render
@@ -55,9 +55,9 @@ class CertificatesController < ApplicationController
   def set_carlist
     @cars = Car.where(user_id: current_user.id).to_a
     void_option = Car.new(
-      id: 0, nickname: "[新規で入力]", 
-      model: "", license_num: "", 
-      drivers_name: ""
+      id: 0, nickname: '[新規で入力]',
+      model: '', license_num: '',
+      drivers_name: ''
     )
     @cars << void_option
     gon.cars = @cars

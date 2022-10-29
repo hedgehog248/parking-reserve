@@ -30,7 +30,7 @@ class CarsController < ApplicationController
     car.destroy
     redirect_to user_path(current_user.id)
   end
-  
+
   private
 
   def car_params

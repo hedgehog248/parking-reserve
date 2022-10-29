@@ -3,38 +3,41 @@
     利用者情報
   </h2>
   <div class="user-info-content">
-    <div class="left-content">
-      <table class="user-info">
-        <tr>
-          <%= tag.th "部屋番号" %>
-          <%= tag.td "#{@user.building_num}号棟 #{@user.room_num}号室" %>
-        </tr>
-        <tr>
-          <%= tag.th "登録者氏名" %>
-          <%= tag.td "#{@user.last_name} #{@user.first_name}" %>
-        </tr>
-        <tr>
-          <%= tag.th "メールアドレス" %>
-          <%= tag.td "#{@user.email}" %>
-        </tr>
-      </table>
+    <div class="info-title">
+      利用者情報
     </div>
+    <div class="user-content-wrapper mobile-blocky">
+      <div class="left-content">
+        <table class="user-info mobile-blocky">
+          <tr>
+            <%= tag.th "部屋番号" %>
+            <%= tag.td "#{@user.building_num}号棟 #{@user.room_num}号室" %>
+          </tr>
+          <tr>
+            <%= tag.th "登録者氏名" %>
+            <%= tag.td "#{@user.last_name} #{@user.first_name}" %>
+          </tr>
+          <tr>
+            <%= tag.th "メールアドレス" %>
+            <%= tag.td "#{@user.email}" %>
+          </tr>
+        </table>
+      </div>
 
-    <div class="btn-content">
-      <%= render partial: "shared/edit_btn", locals: { linked_path: edit_user_registration_path } %>
-      <% confirm_msg = "#{@user.last_name}さん！\n利用者登録を削除すると現在の予約もすべて削除されます。\n本当に削除しますか？\nよろしければ【OK】ボタンを押してください。" %>
-      <%= render partial: "shared/delete_btn", locals: {
-                          linked_path: user_registration_path, 
-                          confirm_msg: confirm_msg
-      } %>
+      <div class="btn-content">
+        <%= render partial: "shared/edit_btn", locals: { linked_path: edit_user_registration_path } %>
+        <% confirm_msg = "#{@user.last_name}さん！\n利用者登録を削除すると現在の予約もすべて削除されます。\n本当に削除しますか？\nよろしければ【OK】ボタンを押してください。" %>
+        <%= render partial: "shared/delete_btn", locals: {
+                            linked_path: user_registration_path, 
+                            confirm_msg: confirm_msg
+        } %>
+      </div>
     </div>
   </div>
 
-  <div class="mycar-title-wrapper">
-    <h3 class="mycar-title">
-      車輌情報
-    </h3>
-  <div class="square btn">
+  <div class="mycar-title-wrapper mobile-blocky">
+  <%= tag.h2 "車両情報", class: "mycar-title" %>
+  <div class="rectangular btn mycar-registration">
     <span class="material-icons btn-icon">
       add_box
     </span>
@@ -43,31 +46,35 @@
     </div>
   </div>
 
-
-    
   </div>
   <% (@user.cars).each do |car| %>
     <div class="mycar-content">
-      <%= tag.div car[:nickname] %>
-      <table class="mycar-info">
-        <tr>
-          <%= tag.th "使用車輌（車種）" %>
-          <%= tag.td car[:model] %>
-        </tr>
-        <tr>
-          <%= tag.th "車両登録番号"%>
-          <%= tag.td car[:license_num] %>
-        </tr>
-        <tr>
-          <%= tag.th "使用者氏名" %>
-          <%= tag.td car[:drivers_name] %>
-        </tr>
-      </table>
+      <div class="info-title">
+        <%= tag.div car[:nickname] %>
+      </div>
+      <div class="mycar-content-wrapper mobile-blocky">
+        <div class="left-content">
+          <table class="mycar-info mobile-blocky">
+            <tr>
+              <%= tag.th "使用車輌（車種）" %>
+              <%= tag.td car[:model] %>
+            </tr>
+            <tr>
+              <%= tag.th "車両登録番号"%>
+              <%= tag.td car[:license_num] %>
+            </tr>
+            <tr>
+              <%= tag.th "使用者氏名" %>
+              <%= tag.td car[:drivers_name] %>
+            </tr>
+          </table>
+        </div>
 
-      <div class="btn-content">
-        <%= render partial: "shared/edit_btn", locals: { linked_path: edit_car_path(car.id) } %>
-        <% confirm_msg = "登録車両『#{car.nickname}』を削除しますか？\nよろしければ【OK】ボタンを押してください。" %>
-        <%= render partial: "shared/delete_btn", locals: { linked_path: car_path(car.id), confirm_msg: confirm_msg } %>
+        <div class="btn-content">
+          <%= render partial: "shared/edit_btn", locals: { linked_path: edit_car_path(car.id) } %>
+          <% confirm_msg = "登録車両『#{car.nickname}』を削除しますか？\nよろしければ【OK】ボタンを押してください。" %>
+          <%= render partial: "shared/delete_btn", locals: { linked_path: car_path(car.id), confirm_msg: confirm_msg } %>
+        </div>
       </div>
     </div>
   <% end %>

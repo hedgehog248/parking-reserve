@@ -15,22 +15,22 @@ RSpec.describe Car, type: :model do
       it 'nicknameが空だと保存できない' do
         @car.nickname = ''
         @car.valid?
-        expect(@car.errors.full_messages).to include "識別用ニックネームを入力してください"
+        expect(@car.errors.full_messages).to include '識別用ニックネームを入力してください'
       end
       it 'modelが空だと保存できない' do
         @car.model = ''
         @car.valid?
-        expect(@car.errors.full_messages).to include "使用車輌(車種)を入力してください"
+        expect(@car.errors.full_messages).to include '使用車輌(車種)を入力してください'
       end
       it 'license_numが空だと保存できない' do
         @car.license_num = ''
         @car.valid?
-        expect(@car.errors.full_messages).to include "車輌登録番号を入力してください"
+        expect(@car.errors.full_messages).to include '車輌登録番号を入力してください'
       end
       it 'userが紐付いていないと保存できない' do
         @car.user = nil
         @car.valid?
-        expect(@car.errors.full_messages).to include "Userを入力してください"
+        expect(@car.errors.full_messages).to include 'Userを入力してください'
       end
     end
   end

@@ -1,13 +1,14 @@
 <header>
     <div class="logo">
-      <p>その場で確認、すぐに予約</p>
-      <h1><%= link_to "オサエトコ", root_path %></h1>
+      <h1><%= link_to "トットコ！", root_path %></h1>
+      <p>ABCマンション(仮)来客用駐車場予約アプリ</p>
     </div>
 </header>
 
 <nav>
   <ul class="nav-bar">
     <% if user_signed_in? %>
+      <li class="nav-item"><%= link_to "トップページ", root_path %></li>
       <li class="nav-item"><%= link_to "予約表", reservations_path %></li>
       <li class="nav-item"><%= link_to "利用者情報", user_path(current_user.id) %></li>
       <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>

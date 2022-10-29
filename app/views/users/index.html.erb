@@ -3,7 +3,7 @@
     <%= current_user.last_name %>さん、こんにちは！<br>
     <% if @reservations.present? %>
       現在の予約状況は以下の通りです。<br>
-      終了日時を過ぎたものは自動で削除されます。
+      終了日時を過ぎたものは自動で非表示になります。
     <% else %>
       現在、予約はありません。
     <% end %>
@@ -16,7 +16,7 @@
       </div>
       <div class="reserv-content-wrapper">
         <div class="left-content">
-          <table class="reserv-info">
+          <table class="reserv-info mobile-blocky">
             <tr>
               <%= tag.th "開始日時" %>
               <%= tag.td l reserv[:start_datetime] %>
