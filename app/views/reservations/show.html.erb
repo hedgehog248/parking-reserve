@@ -25,7 +25,7 @@
         <tr>
           <%= tag.th class: "hours-cell" %>
           <% 24.times do |hour| %>
-            <%= tag.th(class: "hours-cell") {tag.div hour, class: "hour-label"} %>
+            <%= tag.th(class: "hours-cell") {tag.div "#{hour}時", class: "hour-label"} %>
           <% end %>
           <%= tag.th(class: "hours-cell") {tag.div 0, class: "hour-label"} %>
         </tr>

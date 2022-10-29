@@ -244,59 +244,6 @@ nav {
     padding: calc((2.6em - 1.4rem) / 2) 0.5em calc((2.6em - 1.4rem) / 2) 3em;
   }
 }
-/*----------------------------------------------------------
-  Stepper
-----------------------------------------------------------*/
-.c-stepper {
-  display: flex;
-  flex-wrap: wrap;
-  --size: 3rem;
-  --spacing: 0.5rem;
-  margin: 3rem 0;
-
-  .c-stepper__item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    .c-stepper__title {
-      color: colors(table-border);
-      font-size: 1.2rem;
-    }
-    .c-stepper__desc {
-      color: colors(table-border);
-      font-size: 1.4rem;
-      font-weight: 400;
-    }
-  }
-
-  .c-stepper__item::before {
-    content: "";
-    position: relative;
-    z-index: 1;
-    display: block;
-    width: var(--size);
-    height: var(--size);
-    border-radius: 50%;
-    margin: 0 auto;
-    background-color: colors(table-border);
-  }
-
-  .c-stepper__item:not(:last-child):after {
-    content: "";
-    position: relative;
-    top: calc(var(--size) / 2);
-    left: calc(50% + calc(var(--size) / 2 + var(--spacing)));
-    width: calc(100% - var(--size) - calc(var(--spacing) * 2));
-    height: 2px;
-    background-color: colors(table-border);
-    order: -1;
-  }
-
-  .complete {
-    color: colors(second);
-  }
-}
 
 /*----------------------------------------------------------
   reservation/shared
@@ -395,7 +342,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding-top: 40px;
   .timetable-title {
     font-size: 2.4rem;
     font-weight: 700;
@@ -429,15 +375,16 @@ nav {
         left: 0%;
         bottom: -15%; 
         transform: translate(-50%, -50%);
+        font-size: 1.2rem;
         font-weight: 400;
       }
     }
   }
   // 駐車場ナンバーのヘッダー
   .p_num-wrapper {
-    position: sticky;       // スクロール時にヘッダーが画面に留まる設定
+    position: sticky;          // スクロール時にヘッダーが画面に留まる設定
     left: 0;
-    z-index: 10;           // レイヤーを手前側にしてかぶらないようにする
+    z-index: 10;               // レイヤーを手前側にしてかぶらないようにする
     justify-content: center;
     align-items: center;
     padding: 2px;
@@ -472,16 +419,16 @@ nav {
 
   // 予約時間帯枠の設定
   .cell {
-    min-width: 45px;
+    position: relative;
+    min-width: 50px;
     border-width: 1px;
     border-style: solid dashed;
     border-color: colors(table-border);
     // 予約済みの枠にラインを引く
     .reserved_bar {
-      width: 100%;
-      height: 80%;
       color: transparent;
     }
+
     // 空いている枠の設定
     .button_to {
       display: flex;
@@ -494,7 +441,6 @@ nav {
         border: none;
         background-color: colors(base);
         color: transparent;
-        // font-size: 2em;
         cursor: pointer;
         transition: all, 0.2s;
       }
