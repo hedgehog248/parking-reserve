@@ -174,7 +174,7 @@ nav {
 
 .required::after {
   color: colors(note);
-  font-size: 12px;
+  font-size: 0.8em;
   content: ' ※必須';
 }
 
@@ -460,7 +460,7 @@ nav {
     td {
       padding: 0.5em;
     }
-  }  
+  }
 }
 
 .confirm-form {

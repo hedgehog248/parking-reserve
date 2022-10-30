@@ -21,7 +21,7 @@
       <%= f.select :dest_id, options_for_select({"自宅" => 1, "[新規で入力]" => 2}), include_blank: "選択してください" %>
     </div>
     <div class="right-container">
-      <%= f.label :building_num, "部屋番号" %><br>
+      <%= f.label :building_num, "部屋番号", class: "required" %><br>
       <div class="build-num">
         <div>
           <%= f.text_field :building_num, placeholder: "例)○○" %>号棟
@@ -30,6 +30,7 @@
           <%= f.text_field :room_num, placeholder: "例)△△" %>号室
         </div>
       </div>
+      <%= f.label :destination, "訪問先", class: "required" %><br>
       <%= f.text_field :destination, placeholder: "例)✕✕", class: "destination" %>様方
     </div>
   </div>
@@ -41,15 +42,15 @@
     </div>
     <div class="right-container">
       <div class="">
-        <%= f.label :car_model, "使用車輌(車種)" %><br>
-        <%= f.text_field :car_model, placeholder: "例)HONDA プリウス" %>
+        <%= f.label :car_model, "使用車両(車種)", class: "required" %><br>
+        <%= f.text_field :car_model, placeholder: "例)HONDA プリウスなど" %>
       </div>
       <div class="">
-        <%= f.label :license_num, "車輌登録番号" %><br>
-        <%= f.text_field :license_num, placeholder: "例)習志野●● あ 00-00" %>
+        <%= f.label :license_num, "車両登録番号", class: "required" %><br>
+        <%= f.text_field :license_num, placeholder: "例)習志野●● あ 00-00など" %>
       </div>
       <div class="">
-        <%= f.label :drivers_name, "使用者氏名" %><br>
+        <%= f.label :drivers_name, "使用者氏名(運転手)", class: "required" %><br>
         <%= f.text_field :drivers_name %>
       </div>
     </div>

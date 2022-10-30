@@ -6,7 +6,7 @@
 
   <%# ナビゲータ %>
   <div class="timetable-heading">
-    <div class="prev-day">    
+    <div class="prev-day">
       <%= link_to "<< 前日を表示", reservation_path(@dtime.yesterday) %>
     </div>
     <div class="timetable-title">
@@ -51,5 +51,5 @@
       </tbody>
     </table>
   </div>
-  <%= render partial: "shared/backward_btn", locals: { linked_path: reservations_path(@dtime), page: "カレンダーページ" } %>
+  <%= render partial: "shared/backward_btn", locals: { linked_path: reservations_path, page: "カレンダーページ" } %>
 </div>

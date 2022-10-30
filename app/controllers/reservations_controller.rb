@@ -7,7 +7,7 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    @dtime = params[:id].to_time
+    @dtime = params[:id].in_time_zone
     @reservation = Reservation.new
     @reservations = get_all_list(@dtime)
   end
@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new
     @reservation[:park_num] = params[:park_num]
     @reservation[:start_datetime] = params[:start_datetime]
-    @reservation[:end_datetime] = @reservation[:start_datetime] + 23.hours
+    @reservation[:end_datetime] = @reservation[:start_datetime]
   end
 
   def confirm
