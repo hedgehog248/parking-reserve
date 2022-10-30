@@ -522,6 +522,7 @@ nav {
 ----------------------------------------------------------*/
 .user-info-content, .mycar-content {
   padding: 1.5em;
+  margin-bottom: 2rem;
   border-radius: 5px;
   background-color: colors(grayish-base);
 }
@@ -826,7 +827,7 @@ nav {
   .short {
     .btn-icon {
       font-size: 36px;
-      left: calc(50% - 1.4em);
+      left: calc(50% - 1.8em);
     }
   }
 }

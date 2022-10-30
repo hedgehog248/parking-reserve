@@ -36,46 +36,53 @@
   </div>
 
   <div class="mycar-title-wrapper mobile-blocky">
-  <%= tag.h2 "車両情報", class: "mycar-title" %>
-  <div class="rectangular btn mycar-registration">
-    <span class="material-icons btn-icon">
-      add_box
-    </span>
-    <div class="btn-text">
-      <%= link_to "新規登録", new_car_path %>
+    <%= tag.h2 "車両情報", class: "mycar-title" %>
+    <div class="rectangular btn short mycar-registration">
+      <span class="material-icons btn-icon">
+        add_box
+      </span>
+      <div class="btn-text">
+        <%= link_to "新規登録", new_car_path %>
+      </div>
     </div>
   </div>
 
-  </div>
-  <% (@user.cars).each do |car| %>
-    <div class="mycar-content">
-      <div class="info-title">
-        <%= tag.div car[:nickname] %>
-      </div>
-      <div class="mycar-content-wrapper mobile-blocky">
-        <div class="left-content">
-          <table class="mycar-info mobile-blocky">
-            <tr>
-              <%= tag.th "使用車輌（車種）" %>
-              <%= tag.td car[:model] %>
-            </tr>
-            <tr>
-              <%= tag.th "車両登録番号"%>
-              <%= tag.td car[:license_num] %>
-            </tr>
-            <tr>
-              <%= tag.th "使用者氏名" %>
-              <%= tag.td car[:drivers_name] %>
-            </tr>
-          </table>
+  <% if @user.cars.present? %>
+    <% (@user.cars).each do |car| %>
+      <div class="mycar-content">
+        <div class="info-title">
+          <%= tag.div car[:nickname] %>
         </div>
+        <div class="mycar-content-wrapper mobile-blocky">
+          <div class="left-content">
+            <table class="mycar-info mobile-blocky">
+              <tr>
+                <%= tag.th "使用車輌（車種）" %>
+                <%= tag.td car[:model] %>
+              </tr>
+              <tr>
+                <%= tag.th "車両登録番号"%>
+                <%= tag.td car[:license_num] %>
+              </tr>
+              <tr>
+                <%= tag.th "使用者氏名" %>
+                <%= tag.td car[:drivers_name] %>
+              </tr>
+            </table>
+          </div>
 
-        <div class="btn-content">
-          <%= render partial: "shared/edit_btn", locals: { linked_path: edit_car_path(car.id) } %>
-          <% confirm_msg = "登録車両『#{car.nickname}』を削除しますか？\nよろしければ【OK】ボタンを押してください。" %>
-          <%= render partial: "shared/delete_btn", locals: { linked_path: car_path(car.id), confirm_msg: confirm_msg } %>
+          <div class="btn-content">
+            <%= render partial: "shared/edit_btn", locals: { linked_path: edit_car_path(car.id) } %>
+            <% confirm_msg = "登録車両『#{car.nickname}』を削除しますか？\nよろしければ【OK】ボタンを押してください。" %>
+            <%= render partial: "shared/delete_btn", locals: { linked_path: car_path(car.id), confirm_msg: confirm_msg } %>
+          </div>
         </div>
       </div>
+    <% end %>
+  <% else %>
+    <div class="mycar-content">
+      現在登録された車両はありません。<br>
+      よく利用する車を登録しておくと許可証の申請時に自動入力が利用できます。
     </div>
   <% end %>
   <%= render partial: "shared/backward_btn", locals: { linked_path: root_path, page: "トップページ" } %>
