@@ -1,19 +1,10 @@
-<%= form_with model: [reservation, certificate], class: "certificate-form", local: true do |f| %>
+<%= form_with model: [reservation, certificate], class: "certificate-form mobile-blocky", local: true do |f| %>
   <%= render "shared/error_messages", resource: f.object %>
 
   <%# 既に決まっている情報 %>
-  <div class="form-content">
-    開始日時<br>
-    <%= l reservation[:start_datetime] %>
+  <div class="reserv-info-wrapper">
+    <%= render partial: "shared/reserv_info_table", locals: { reservation: reservation } %>
   </div>
-  <div class="form-content">
-    終了日時<br>
-    <%= l reservation[:end_datetime] %>
-  </div>
-  <div class="form-content">
-    駐車場番号: <%= reservation[:park_num] %>番
-  </div>
-
   <%# 新たに必要な情報 %>
   <div class="form-contents-wrapper">
     <div class="left-container">

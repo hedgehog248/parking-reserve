@@ -9,41 +9,36 @@
     <% end %>
   </div>
   
-  <% @reservations.each.with_index(1) do |reserv, index| %>
+  <% @reservations.each.with_index(1) do |reservation, index| %>
     <div class="reserv-info-content">
       <div class="info-title">
         予約<%= index %>
       </div>
       <div class="reserv-content-wrapper">
         <div class="left-content">
-          <table class="reserv-info mobile-blocky">
-            <tr>
-              <%= tag.th "開始日時" %>
-              <%= tag.td l reserv[:start_datetime] %>
-            </tr>
-            <tr>
-              <%= tag.th "終了日時" %>
-              <%= tag.td l reserv[:end_datetime] %>
-            </tr>
-            <tr>
-              <%= tag.th "駐車場番号" %>
-              <%= tag.td "#{reserv[:park_num]}番" %>
-            </tr>
-          </table>
+          <%= render partial: "shared/reserv_info_table", locals: { reservation: reservation } %>
         </div>
 
         <div class="btn-content">
           <%# 「許可証の申請ボタン」、申請済みなら「許可証表示ボタン」と「申請内容の変更ボタン」 %>
-          <% if reserv.certificate.present? %> 
-            <%= render partial: "shared/generate_pdf_btn", locals: { reserv_id: reserv.id, certif_id: reserv.certificate.id } %>
-            <%= render partial: "shared/edit_certificate_btn", locals: { reserv_id: reserv.id, certif_id: reserv.certificate.id } %>
+          <% if reservation.certificate.present? %> 
+            <%= render partial: "shared/generate_pdf_btn", locals: { 
+              reserv_id: reservation.id, 
+              certif_id: reservation.certificate.id 
+              }
+            %>
+            <%= render partial: "shared/edit_certificate_btn", locals: { 
+              reserv_id: reservation.id, 
+              certif_id: reservation.certificate.id 
+              }
+            %>
           <% else %>
-            <%= render partial: "shared/new_certificate_btn", locals: { reserv_id: reserv.id } %>
+            <%= render partial: "shared/new_certificate_btn", locals: { reserv_id: reservation.id } %>
           <% end %>
           <%# 削除ボタン %>
           <% confirm_msg = "削除後は元に戻せません。\nこの予約を削除しますか？\nよろしければ【OK】ボタンを押してください。" %>
           <%= render partial: "shared/delete_btn", locals: {
-                      linked_path: reservation_path(reserv.id), 
+                      linked_path: reservation_path(reservation.id), 
                       confirm_msg: confirm_msg
           } %>
         </div>

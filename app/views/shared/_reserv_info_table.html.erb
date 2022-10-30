@@ -1,0 +1,14 @@
+<table class="reserv-info mobile-blocky">
+  <tr>
+    <%= tag.th "開始日時" %>
+    <%= tag.td (l reservation.start_datetime) %>
+  </tr>
+  <tr>
+    <%= tag.th "終了日時" %>
+    <%= tag.td (l reservation.end_datetime) %>
+  </tr>
+  <tr>
+    <%= tag.th "駐車場番号" %>
+    <%= tag.td ("#{reservation.park_num}番") %>
+  </tr>
+</table>

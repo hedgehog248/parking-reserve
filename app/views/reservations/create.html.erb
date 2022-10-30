@@ -1,6 +1,20 @@
 <div class="main">
+  <%= tag.h2 "予約完了", class: "page-title" %>
   <p class="message">
-    予約が完了しました。
+    予約が完了しました。<br>
+    このまま利用許可証の申請に進む場合は「利用許可証の申請」ボタンを押してください。<br>
+    利用許可証の申請はトップページからいつでもおこなえます。<br>
+    利用開始日時までに申請をし、許可証を印刷してご利用ください。
   </p>
-  <%= render partial: "shared/backward_btn", locals: { linked_path: root_path, page: "トップページ" } %>
+  <div class="reserv-finished-page__btn-wrapper mobile-blocky">
+    <%= render partial: "shared/new_certificate_btn", locals: { reserv_id: @reservation.id } %>
+    <div class="rectangular btn long">
+      <span class="material-icons btn-icon" area-hidden="true" focusable="false">
+        arrow_circle_up
+      </span>
+      <div class="btn-text">
+        <%= link_to "トップページへ戻る", root_path %>
+      </div>
+    </div>
+  </div>
 </div>
