@@ -35,7 +35,8 @@ https://parking-reserve-38018.herokuapp.com/
 
 ## よく利用する車両情報の事前登録
 1. ヘッダーの利用者情報をクリック。
-1. 車両情報の新規登録ボタンを押し、必要事項を入力のうえ登録ボタンを押す。(利用許可証の申請時に登録した車両情報が自動入力の選択肢として表示される）
+1. 車両情報の新規登録ボタンを押し、必要事項を入力のうえ登録ボタンを押す。  
+(利用許可証の申請時に登録した車両情報が自動入力の選択肢として表示される）
 
 # アプリケーションを作成した背景
 このアプリは実際に私の住むマンションをモデルにしている。  
@@ -61,8 +62,9 @@ https://parking-reserve-38018.herokuapp.com/
 ## 利用者管理機能
 * 新規登録
 [![Image from Gyazo](https://i.gyazo.com/fd89859fa3663191faecfd52d6d7ef04.gif)](https://gyazo.com/fd89859fa3663191faecfd52d6d7ef04)
-* ログイン／ログアウト機能
+* ログイン機能
 [![Image from Gyazo](https://i.gyazo.com/09b1065b9dec8b3fbb6e48f4ade6f534.gif)](https://gyazo.com/09b1065b9dec8b3fbb6e48f4ade6f534)
+* ログアウト機能
 [![Image from Gyazo](https://i.gyazo.com/a26a976e4e63fc17dc412973744a2b3c.gif)](https://gyazo.com/a26a976e4e63fc17dc412973744a2b3c)
 * 利用者情報画面
 [![Image from Gyazo](https://i.gyazo.com/09655e35859b3915f3d7ca51a9717295.png)](https://gyazo.com/09655e35859b3915f3d7ca51a9717295)
