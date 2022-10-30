@@ -567,7 +567,7 @@ nav {
 }
 
 /*----------------------------------------------------------
-  devise shared
+  devise shared ログイン／新規登録ページ
 ----------------------------------------------------------*/
 .form-wrapper {
   display: flex;
@@ -597,6 +597,9 @@ nav {
   .links {
     padding: 1em;
     text-align: center;
+  }
+  .text-field {
+    padding: 0.2em;
   }
 }
 
