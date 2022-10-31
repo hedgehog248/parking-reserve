@@ -9,6 +9,11 @@
   <ul class="nav-bar">
     <% if user_signed_in? %>
       <li class="nav-item"><%= link_to "トップページ", root_path %></li>
+
+      <% if current_user.admin? %>
+        <li class="nav-item"><%= link_to "予約一覧", admin_users_path %></li>
+      <% end %>
+
       <li class="nav-item"><%= link_to "予約表", reservations_path %></li>
       <li class="nav-item"><%= link_to "利用者情報", user_path(current_user.id) %></li>
       <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
