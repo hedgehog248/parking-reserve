@@ -182,6 +182,11 @@ nav {
   display: contents;
 }
 
+.main-widen {
+  width: 80%;
+  max-width: none;
+}
+
 /*----------------------------------------------------------
   Shared Buttons
 ----------------------------------------------------------*/
@@ -651,6 +656,31 @@ nav {
   }
 }
 
+/*----------------------------------------------------------
+  admin/user/index 管理者／予約一覧ページ
+----------------------------------------------------------*/
+.all-list-table-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.all-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  th {
+    padding: 0.4em;
+    background-color: colors(main);
+    cursor: pointer;
+  }
+  td {
+    padding: 0.4em;
+    border: 1px solid colors(table-border);
+  }
+}
+
+.center-text {
+  text-align: center;
+}
 /*----------------------------------------------------------
   Responsive Design
 ----------------------------------------------------------*/
