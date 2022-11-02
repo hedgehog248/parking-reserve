@@ -24,6 +24,21 @@ function compareStringDesc(a, b) {
   }
   return 0;
 }
+// インジケータの表示を変更
+function changeIndicator(element) {
+  // クリックした列のインジケータを切替え
+  if (element.classList.contains('asc')) {
+    element.classList.replace('asc', 'desc');
+  } else if (element.classList.contains('desc')) {
+    element.classList.replace('desc', 'asc');
+  } else {
+    element.classList.add('asc');
+  }
+  // クリックした列以外の表示を消す
+  Array.from(element.parentNode.children)
+    .filter(e => e !== element)
+    .forEach(e => e.classList.remove('asc', 'desc'));
+}
 
 window.addEventListener('load', function() {
   let column_no = 0;
@@ -49,14 +64,18 @@ window.addEventListener('load', function() {
       if (sortType == 0) { // 数値ソート
         if (column_no_prev == column_no) { // 同じ列が2回クリックされた場合は降順ソート
           sortArray.sort(compareNumberDesc);
+          changeIndicator(this);
         } else {
           sortArray.sort(compareNumber);
+          changeIndicator(this);
         }
       } else { // 文字列ソート
         if (column_no_prev == column_no) { // 同じ列が2回クリックされた場合は降順ソート
           sortArray.sort(compareStringDesc);
+          changeIndicator(this);
         } else {
           sortArray.sort(compareString);
+          changeIndicator(this);
         }
       }
       // ソート後のTRオブジェクトを順番にtbodyへ追加(移動)
