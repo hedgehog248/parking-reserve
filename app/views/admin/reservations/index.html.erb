@@ -4,7 +4,7 @@
   <div class="all-list-table-container js-scrollable sortable-table">
     <table class="all-list-table">
       <tr>
-        <%= tag.th "No." %>
+        <%= tag.th "ID" %>
         <%= tag.th "駐車場" %>
         <%= tag.th "開始日時" %>
         <%= tag.th "終了日時" %>
@@ -22,11 +22,11 @@
           <%= tag.td "#{reservation.user.building_num}-#{reservation.user.room_num}", class: "center-text" %>
           <%= tag.td "#{reservation.user.last_name} #{reservation.user.first_name}" %>
           <%= tag.td l reservation.created_at %>
-          <td>
+          <td class="center-text">
             <% if reservation.certificate.present? %>
-              <%= link_to '提出済', '#', class: "center-text" %>
+              <%= link_to '提出済', admin_reservation_path(reservation.id) %>
             <% else %>
-              <%= tag.p '未提出', class: "center-text" %>
+              <%= tag.p '未提出' %>
             <% end %>
           </td>
         </tr>

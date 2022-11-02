@@ -657,7 +657,7 @@ nav {
 }
 
 /*----------------------------------------------------------
-  admin/user/index 管理者／予約一覧ページ
+  admin/reservations/index 管理者／予約一覧ページ
 ----------------------------------------------------------*/
 .all-list-table-container {
   overflow-x: auto;
@@ -700,11 +700,41 @@ nav {
   td {
     padding: 0.4em;
     border: 1px solid colors(table-border);
+    a {
+      
+    }
   }
 }
 
 .center-text {
   text-align: center;
+}
+
+/*----------------------------------------------------------
+  admin/reservations/show 利用許可証申請内容ページ
+----------------------------------------------------------*/
+.admin-reserv-wrapper {
+  .caption {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  .info-table {
+    width: 100%;
+    font-size: 1.4rem;
+    margin-bottom: 1em;
+    th {
+      padding: 0.5em;
+      font-weight: 500;
+      width: 36%;
+    }
+    td {
+      padding: 0.5em;
+      font-weight: 400;
+    }
+    .odd-row {
+      background-color: colors(base);
+    }
+  }
 }
 
 /*----------------------------------------------------------

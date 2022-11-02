@@ -1,0 +1,67 @@
+<div class="main">
+  <h2 class="page-title">
+    利用許可証申請内容
+  </h2>
+  <div class="user-info-content">
+    <div class="admin-reserv-wrapper mobile-blocky">
+      <%= tag.div "予約情報", class: "caption" %>
+      <table class="info-table mobile-blocky">
+        <tr class="odd-row">
+          <%= tag.th "予約ID" %>
+          <%= tag.td @reservation.id %>
+        </tr>
+        <tr>
+          <%= tag.th "駐車場番号" %>
+          <%= tag.td "#{@reservation.park_num}番" %>
+        </tr>
+        <tr class="odd-row">
+          <%= tag.th "予約日時" %>
+          <%= tag.td "#{l @reservation.start_datetime} 〜 #{l @reservation.end_datetime}" %>
+        </tr>
+        <tr>
+          <%= tag.th "使用車輌（車種）" %>
+          <%= tag.td "#{@reservation.certificate.car_model}" %>
+        </tr>
+        <tr class="odd-row">
+          <%= tag.th "車両登録番号"%>
+          <%= tag.td "#{@reservation.certificate.license_num}" %>
+        </tr>
+        <tr>
+          <%= tag.th "使用者氏名" %>
+          <%= tag.td "#{@reservation.certificate.drivers_name}" %>
+        </tr>
+        <tr class="odd-row">
+          <%= tag.th "訪問先" %>
+          <%= tag.td "#{@reservation.certificate.building_num}号棟
+                      #{@reservation.certificate.room_num}号室
+                      #{@reservation.certificate.destination}"
+          %>
+        </tr>
+        <tr>
+          <%= tag.th "予約作成日時" %>
+          <%= tag.td "#{l @reservation.created_at}" %>
+        </tr>
+        <tr class="odd-row">
+          <%= tag.th "申請内容最終更新日時" %>
+          <%= tag.td "#{l @reservation.certificate.updated_at}" %>
+        </tr>
+      </table>
+      <%= tag.div "利用者情報", class: "caption" %>
+      <table class="info-table mobile-blocky">
+        <tr class="odd-row">
+          <%= tag.th "部屋番号" %>
+          <%= tag.td "#{@reservation.user.building_num}号棟 #{@reservation.user.room_num}号室" %>
+        </tr>
+        <tr>
+          <%= tag.th "登録者氏名" %>
+          <%= tag.td "#{@reservation.user.last_name} #{@reservation.user.first_name}" %>
+        </tr>
+        <tr class="odd-row">
+          <%= tag.th "メールアドレス" %>
+          <%= tag.td "#{@reservation.user.email}" %>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <%= render partial: "shared/backward_btn", locals: { linked_path: admin_reservations_path, page: "予約一覧" } %>
+</div>
