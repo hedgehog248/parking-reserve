@@ -9,9 +9,9 @@
   <ul class="nav-bar">
     <% if user_signed_in? %>
       <li class="nav-item"><%= link_to "トップページ", root_path %></li>
-
+      <%# adminだけ表示されるボタン %>
       <% if current_user.admin? %>
-        <li class="nav-item"><%= link_to "予約一覧", admin_users_path %></li>
+        <li class="nav-item"><%= link_to "予約一覧", admin_reservations_path %></li>
       <% end %>
 
       <li class="nav-item"><%= link_to "予約表", reservations_path %></li>
