@@ -1,15 +1,15 @@
 <div class="main main-widen">
   <%= tag.h2 "予約一覧", class: "page-title" %>
 
-  <div class="all-list-table-container js-scrollable">
+  <div class="all-list-table-container js-scrollable sortable-table">
     <table class="all-list-table">
       <tr>
-        <%= tag.th "No." %>
-        <%= tag.th "駐車場" %>
+        <%= tag.th "No.", class: "center-text" %>
+        <%= tag.th "駐車場", class: "center-text" %>
         <%= tag.th "開始日時" %>
         <%= tag.th "終了日時" %>
-        <%= tag.th "号棟" %>
-        <%= tag.th "号室" %>
+        <%= tag.th "号棟", class: "center-text" %>
+        <%= tag.th "号室", class: "center-text" %>
         <%= tag.th "予約者" %>
         <%= tag.th "予約作成日時" %>
         <%= tag.th "許可証申請" %>

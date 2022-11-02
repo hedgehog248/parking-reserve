@@ -12,6 +12,7 @@ require("../select_list")
 require("../adjust_minute")
 require("../scrollable")
 require("../nav-bar")
+require("../sort_table")
 require("../add_ontouchstart")
 
 
