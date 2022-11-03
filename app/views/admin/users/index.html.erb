@@ -19,7 +19,12 @@
           <%= tag.td user.email %>
           <%= tag.td (l user.updated_at) %>
           <td class="center-text">
-            <%= link_to '強制削除', '#(user.id)' %>
+            <%= link_to '強制削除',
+                admin_user_path(user.id), 
+                method: :delete,
+                data: { confirm: "この操作は原則ユーザーが転居している場合のみ行なってください。\n本当に削除しますか？\nよろしければ【OK】ボタンを押してください。" },
+                class: "colored-btn narrow-btn"
+            %>
           </td>
         </tr>
       <% end %>

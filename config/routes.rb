@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :reservations, only: [:index, :show]
-    resources :users, only: [:index]
+    resources :users, only: [:index, :destroy]
   end
 
   devise_for :users, controllers: {
