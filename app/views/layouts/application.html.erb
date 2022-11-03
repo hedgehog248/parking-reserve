@@ -22,7 +22,11 @@
 
   <body class="layout">
     <div class="contents-wrapper">
-      <%= render partial: 'shared/header' %>
+      <% if user_signed_in? && current_user.admin? %>
+        <%= render partial: 'shared/header_admin' %>
+      <% elsif user_signed_in? %>
+        <%= render partial: 'shared/header' %>
+      <% end %>
       <div class="main-wrapper">
         <%= yield %>
       </div>

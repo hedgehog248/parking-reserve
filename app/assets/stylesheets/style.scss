@@ -81,16 +81,17 @@ header {
   width: 100%;
   padding: 1em 1em 0;
   background-color: colors(main);
-  .logo {
-    width: 100%;
-    max-width: 720px;
-    a {
-      cursor: pointer;
-      color: colors(accent);
-    }
-    p {
-      font-size: 1rem;
-    }
+}
+
+.logo {
+  width: 100%;
+  max-width: 720px;
+  a {
+    cursor: pointer;
+    color: colors(accent);
+  }
+  p {
+    font-size: 1rem;
   }
 }
 
@@ -671,15 +672,13 @@ nav {
     position: relative;
     padding: 0.4em 1em 0.4em 0.4em;
     border: 1px solid colors(table-border);
-    background-color: colors(main);
+    background-color: colors(accent);
+    color: colors(base);
     cursor: pointer;
   }
   td {
     padding: 0.4em;
     border: 1px solid colors(table-border);
-    a {
-      
-    }
   }
 }
 
@@ -694,18 +693,18 @@ nav {
     top: 50%;
   }
   &::before {
-    border-bottom-color: colors(past);
+    border-bottom-color: lighten(colors(accent), 36%);
     margin-top: -0.6em;
   }
   &::after {
-    border-top-color: colors(past);
+    border-top-color: lighten(colors(accent), 36%);
     margin-top: 0.1em;
   }
   &.asc::before {
-    border-bottom-color: colors(text);
+    border-bottom-color: white;
   }
   &.desc::after {
-    border-top-color: colors(text);
+    border-top-color: white;
   }
 }
 
@@ -750,7 +749,7 @@ nav {
     box-shadow: none;
     transform: translateY(3px);
   }
-  .table-striped a:hover {
+  .table-striped a:hover, .all-list-table tr:hover {
     background-color: rgba(colors(main), 0.7);
     transition: all, 0.2s;
   }
@@ -765,7 +764,7 @@ nav {
     box-shadow: none;
     transform: translateY(3px);
   }
-  .table-striped a:active {
+  .table-striped a:active, .all-list-table tr:active {
     background-color: rgba(colors(main), 0.7);
     transition: all, 0.2s;
   }
