@@ -673,29 +673,6 @@ nav {
     border: 1px solid colors(table-border);
     background-color: colors(main);
     cursor: pointer;
-    &::before, &::after {
-      content: "";
-      position: absolute;
-      height: 0;
-      width: 0;
-      border: 0.4rem solid transparent;
-      right: 0.4em;
-      top: 50%;
-    }
-    &::before {
-      border-bottom-color: colors(past);
-      margin-top: -0.6em;
-    }
-    &::after {
-      border-top-color: colors(past);
-      margin-top: 0.1em;
-    }
-    &.asc::before {
-      border-bottom-color: colors(text);
-    }
-    &.desc::after {
-      border-top-color: colors(text);
-    }
   }
   td {
     padding: 0.4em;
@@ -703,6 +680,32 @@ nav {
     a {
       
     }
+  }
+}
+
+.sortable-header {
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border: 0.4rem solid transparent;
+    right: 0.4em;
+    top: 50%;
+  }
+  &::before {
+    border-bottom-color: colors(past);
+    margin-top: -0.6em;
+  }
+  &::after {
+    border-top-color: colors(past);
+    margin-top: 0.1em;
+  }
+  &.asc::before {
+    border-bottom-color: colors(text);
+  }
+  &.desc::after {
+    border-top-color: colors(text);
   }
 }
 

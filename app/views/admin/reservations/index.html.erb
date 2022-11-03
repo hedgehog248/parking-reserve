@@ -4,14 +4,14 @@
   <div class="all-list-table-container js-scrollable sortable-table">
     <table class="all-list-table">
       <tr>
-        <%= tag.th "ID" %>
-        <%= tag.th "駐車場" %>
-        <%= tag.th "開始日時" %>
-        <%= tag.th "終了日時" %>
-        <%= tag.th "部屋番号" %>
-        <%= tag.th "予約者" %>
-        <%= tag.th "予約作成日時" %>
-        <%= tag.th "許可証申請" %>
+        <%= tag.th "ID", class: "sortable-header" %>
+        <%= tag.th "駐車場", class: "sortable-header" %>
+        <%= tag.th "開始日時", class: "sortable-header" %>
+        <%= tag.th "終了日時", class: "sortable-header" %>
+        <%= tag.th "部屋番号", class: "sortable-header" %>
+        <%= tag.th "予約者", class: "sortable-header" %>
+        <%= tag.th "予約作成日時", class: "sortable-header" %>
+        <%= tag.th "許可証申請", class: "sortable-header" %>
       </tr>
       <% @reservations.each do |reservation| %>
         <tr>
