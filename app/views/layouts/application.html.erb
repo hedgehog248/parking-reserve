@@ -7,7 +7,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= include_gon %>
-    <link rel="stylesheet" href="reset.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%# google Fontの導入 %>
@@ -23,7 +22,11 @@
 
   <body class="layout">
     <div class="contents-wrapper">
-      <%= render partial: 'shared/header' %>
+      <% if user_signed_in? && current_user.admin? %>
+        <%= render partial: 'shared/header_admin' %>
+      <% elsif user_signed_in? %>
+        <%= render partial: 'shared/header' %>
+      <% end %>
       <div class="main-wrapper">
         <%= yield %>
       </div>

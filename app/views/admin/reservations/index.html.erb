@@ -1,0 +1,36 @@
+<div class="main main-widen">
+  <%= tag.h2 "予約一覧", class: "page-title" %>
+
+  <div class="all-list-table-container js-scrollable sortable-table">
+    <table class="all-list-table">
+      <tr>
+        <%= tag.th "ID", class: "sortable-header" %>
+        <%= tag.th "駐車場", class: "sortable-header" %>
+        <%= tag.th "開始日時", class: "sortable-header" %>
+        <%= tag.th "終了日時", class: "sortable-header" %>
+        <%= tag.th "部屋番号", class: "sortable-header" %>
+        <%= tag.th "予約者", class: "sortable-header" %>
+        <%= tag.th "予約作成日時", class: "sortable-header" %>
+        <%= tag.th "許可証申請", class: "sortable-header" %>
+      </tr>
+      <% @reservations.each do |reservation| %>
+        <tr>
+          <%= tag.td reservation.id, class: "center-text" %>
+          <%= tag.td reservation.park_num, class: "center-text" %>
+          <%= tag.td l reservation.start_datetime %>
+          <%= tag.td l reservation.end_datetime %>
+          <%= tag.td "#{reservation.user.building_num}-#{reservation.user.room_num}", class: "center-text" %>
+          <%= tag.td "#{reservation.user.last_name} #{reservation.user.first_name}" %>
+          <%= tag.td l reservation.created_at %>
+          <td class="center-text">
+            <% if reservation.certificate.present? %>
+              <%= link_to '提出済', admin_reservation_path(reservation.id) %>
+            <% else %>
+              <%= tag.p '未提出' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

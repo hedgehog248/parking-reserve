@@ -1,0 +1,18 @@
+<header class="admin">
+    <div class="logo admin">
+      <h1><%= link_to "トットコ！", root_path %></h1>
+      <p>ABCマンション(仮)来客用駐車場予約アプリ</p>
+    </div>
+</header>
+
+<nav class="admin">
+  <ul class="nav-bar">
+    <% if user_signed_in? %>
+      <li class="nav-item"><%= link_to "トップページ", root_path %></li>
+      <li class="nav-item"><%= link_to "予約一覧", admin_reservations_path %></li>
+      <li class="nav-item"><%= link_to "利用者一覧", admin_users_path %></li>
+      <li class="nav-item"><%= link_to "予約表", reservations_path %></li>
+      <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+    <% end %>
+  </ul>
+</nav>

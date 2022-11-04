@@ -81,16 +81,17 @@ header {
   width: 100%;
   padding: 1em 1em 0;
   background-color: colors(main);
-  .logo {
-    width: 100%;
-    max-width: 720px;
-    a {
-      cursor: pointer;
-      color: colors(accent);
-    }
-    p {
-      font-size: 1rem;
-    }
+}
+
+.logo {
+  width: 100%;
+  max-width: 720px;
+  a {
+    cursor: pointer;
+    color: colors(accent);
+  }
+  p {
+    font-size: 1rem;
   }
 }
 
@@ -182,6 +183,11 @@ nav {
   display: contents;
 }
 
+.main-widen {
+  width: 80%;
+  max-width: none;
+}
+
 /*----------------------------------------------------------
   Shared Buttons
 ----------------------------------------------------------*/
@@ -217,6 +223,12 @@ nav {
   color: colors(text);
   cursor: pointer;
 }
+
+.narrow-btn {
+  padding: 0.3em 1.2em;
+  border-radius: 3px;
+}
+
 
 // アイコン付き四角ボタン用
 .rectangular {
@@ -652,6 +664,88 @@ nav {
 }
 
 /*----------------------------------------------------------
+  admin/reservations/index 管理者／予約一覧ページ
+----------------------------------------------------------*/
+.all-list-table-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.all-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  th {
+    position: relative;
+    padding: 0.4em 1em 0.4em 0.4em;
+    border: 1px solid colors(table-border);
+    background-color: colors(accent);
+    color: colors(base);
+    cursor: pointer;
+  }
+  td {
+    padding: 0.4em;
+    border: 1px solid colors(table-border);
+  }
+}
+
+.sortable-header {
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border: 0.4rem solid transparent;
+    right: 0.4em;
+    top: 50%;
+  }
+  &::before {
+    border-bottom-color: lighten(colors(accent), 36%);
+    margin-top: -0.6em;
+  }
+  &::after {
+    border-top-color: lighten(colors(accent), 36%);
+    margin-top: 0.1em;
+  }
+  &.asc::before {
+    border-bottom-color: white;
+  }
+  &.desc::after {
+    border-top-color: white;
+  }
+}
+
+.center-text {
+  text-align: center;
+}
+
+/*----------------------------------------------------------
+  admin/reservations/show 利用許可証申請内容ページ
+----------------------------------------------------------*/
+.admin-reserv-wrapper {
+  .caption {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  .info-table {
+    width: 100%;
+    font-size: 1.4rem;
+    margin-bottom: 1em;
+    th {
+      padding: 0.5em;
+      font-weight: 500;
+      width: 36%;
+    }
+    td {
+      padding: 0.5em;
+      font-weight: 400;
+    }
+    .odd-row {
+      background-color: colors(base);
+    }
+  }
+}
+
+/*----------------------------------------------------------
   Responsive Design
 ----------------------------------------------------------*/
 //////////////////////* hover *////////////////////////
@@ -661,7 +755,7 @@ nav {
     box-shadow: none;
     transform: translateY(3px);
   }
-  .table-striped a:hover {
+  .table-striped a:hover, .all-list-table tr:hover {
     background-color: rgba(colors(main), 0.7);
     transition: all, 0.2s;
   }
@@ -676,7 +770,7 @@ nav {
     box-shadow: none;
     transform: translateY(3px);
   }
-  .table-striped a:active {
+  .table-striped a:active, .all-list-table tr:active {
     background-color: rgba(colors(main), 0.7);
     transition: all, 0.2s;
   }

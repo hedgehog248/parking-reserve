@@ -1,0 +1,33 @@
+<div class="main main-widen">
+  <%= tag.h2 "利用者一覧", class: "page-title" %>
+
+  <div class="all-list-table-container js-scrollable sortable-table">
+    <table class="all-list-table">
+      <tr>
+        <%= tag.th "ID", class: "sortable-header" %>
+        <%= tag.th "部屋番号", class: "sortable-header" %>
+        <%= tag.th "氏名", class: "sortable-header" %>
+        <%= tag.th "メールアドレス", class: "sortable-header" %>
+        <%= tag.th "最終更新日時", class: "sortable-header" %>
+        <%= tag.th "強制削除", class: "center-text" %>
+      </tr>
+      <% @users.each do |user| %>
+        <tr>
+          <%= tag.td user.id, class: "center-text" %>
+          <%= tag.td "#{user.building_num}-#{user.room_num}" %>
+          <%= tag.td "#{user.last_name} #{user.first_name}" %>
+          <%= tag.td user.email %>
+          <%= tag.td (l user.updated_at) %>
+          <td class="center-text">
+            <%= link_to '強制削除',
+                admin_user_path(user.id), 
+                method: :delete,
+                data: { confirm: "この操作は原則ユーザーが転居している場合のみ行なってください。\n本当に削除しますか？\nよろしければ【OK】ボタンを押してください。" },
+                class: "colored-btn narrow-btn"
+            %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
