@@ -24,7 +24,7 @@
     <div class="contents-wrapper">
       <% if user_signed_in? && current_user.admin? %>
         <%= render partial: 'shared/header_admin' %>
-      <% elsif user_signed_in? %>
+      <% else %>
         <%= render partial: 'shared/header' %>
       <% end %>
       <div class="main-wrapper">
