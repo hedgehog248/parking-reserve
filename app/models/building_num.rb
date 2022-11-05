@@ -1,0 +1,2 @@
+class BuildingNum < ApplicationRecord
+end

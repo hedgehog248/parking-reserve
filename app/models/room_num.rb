@@ -1,0 +1,2 @@
+class RoomNum < ApplicationRecord
+end
