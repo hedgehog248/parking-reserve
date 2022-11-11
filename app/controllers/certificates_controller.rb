@@ -48,7 +48,7 @@ class CertificatesController < ApplicationController
 
   def certificate_params
     params.require(:certificate).permit(
-      :building_num, :room_num, :destination, :car_model, :license_num, :drivers_name
+      :building_num_id, :room_num_id, :destination, :car_model, :license_num, :drivers_name
     ).merge(reservation_id: params[:reservation_id])
   end
 

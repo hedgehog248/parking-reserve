@@ -6,8 +6,8 @@ ja:
       car: 車輌情報
     attributes:
       user:
-        building_num: 棟番号
-        room_num: 部屋番号
+        building_num_id: 棟番号
+        room_num_id: 部屋番号
         last_name: 姓
         first_name: 名
       reservation:
@@ -15,8 +15,8 @@ ja:
         start_datetime: 開始日時
         end_datetime: 終了日時
       certificate:
-        building_num: 棟番号
-        room_num: 部屋番号
+        building_num_id: 棟番号
+        room_num_id: 部屋番号
         destination: 訪問先
         car_model: 使用車輌（車種）
         license_num: 車輌登録番号

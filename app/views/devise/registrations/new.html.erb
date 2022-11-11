@@ -8,13 +8,12 @@
       <%= render "devise/shared/error_messages", resource: resource %>
       <div class="build-num">
         <div class="field">
-          <%= f.label :building_num, class: "required" %><br />
-          <%= f.select :building_num, [["---", ""], ["10号棟", 10], ["11号棟", 11], ["12号棟", 12], ["13号棟", 13], ["14号棟", 14], ["15号棟", 15], ["16号棟", 16], ["17号棟", 17]] %> 
+          <%= f.label :building_num_id, class: "required" %><br />
+          <%= f.collection_select(:building_num_id, BuildingNum.where.not(id: 9), :id, :name, {}, selected: 0) %> 
         </div>
-        
         <div class="field">
-          <%= f.label :room_num, class: "required" %><br />
-          <%= f.select :room_num, [["---", ""]] %>
+          <%= f.label :room_num_id, class: "required" %><br />
+          <%= f.collection_select(:room_num_id, RoomNum.all, :id, :name, {}) %>
         </div>
       </div>
 

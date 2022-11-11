@@ -12,13 +12,13 @@
       <%= f.select :dest_id, options_for_select({"自宅" => 1, "[新規で入力]" => 2}), include_blank: "選択してください" %>
     </div>
     <div class="right-container">
-      <%= f.label :building_num, "部屋番号", class: "required" %><br>
+      <%= f.label :building_num_id, "部屋番号", class: "required" %><br>
       <div class="build-num">
         <div>
-          <%= f.text_field :building_num, placeholder: "例)○○" %>号棟
+          <%= f.collection_select(:building_num_id, BuildingNum.where.not(id: 9), :id, :name, {}, selected: 0) %>
         </div>
         <div>
-          <%= f.text_field :room_num, placeholder: "例)△△" %>号室
+          <%= f.collection_select(:room_num_id, RoomNum.all, :id, :name, {}) %>
         </div>
       </div>
       <%= f.label :destination, "訪問先", class: "required" %><br>

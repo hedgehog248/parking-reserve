@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -6,10 +8,12 @@ class User < ApplicationRecord
 
   has_many :reservations, dependent: :destroy
   has_many :cars, dependent: :destroy
+  belongs_to :building_num
+  belongs_to :room_num
 
   with_options presence: true do
-    validates :building_num
-    validates :room_num, uniqueness: { scope: :building_num }
+    validates :building_num_id, numericality: { other_than: 0, message: "can't be blank" }
+    validates :room_num_id, uniqueness: { scope: :building_num_id },  numericality: { other_than: 0, message: "can't be blank" }
   end
 
   NAME_REGEX = /\A[ぁ-んァ-ヶ一-龥々ー]+\z/.freeze
