@@ -6,10 +6,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.string :building_num,       null: false
-      t.string :room_num,           null: false
+      t.integer :building_num_id,   null: false
+      t.integer :room_num_id,       null: false
       t.string :last_name,          null: false
       t.string :first_name,         null: false
+      t.boolean :admin,             null: false, default: false
 
       ## Recoverable
       t.string   :reset_password_token
@@ -40,7 +41,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.timestamps null: false
     end
 
-    add_index :users, [:building_num, :room_num], unique: true
+    add_index :users, [:building_num_id, :room_num_id], unique: true
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
