@@ -11,4 +11,9 @@ class BuildingNum < ActiveHash::Base
     { id: 8, name: '17号棟' },
     { id: 9, name: '管理事務所' }
   ]
+
+  include ActiveHash::Associations
+  has_many :users
+  has_many :certificates
+
 end

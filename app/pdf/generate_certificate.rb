@@ -49,11 +49,11 @@ class GenerateCertificate < Prawn::Document
 
     # 利用者記入欄
     move_down 20
-    building_num = reservation.certificate.building_num
-    room_num = reservation.certificate.room_num
+    building_num = reservation.certificate.building_num.name
+    room_num = reservation.certificate.room_num.name
     destination = reservation.certificate.destination
 
-    data = [['訪問先', "#{building_num}号棟 #{room_num}号室 #{destination}様方"],
+    data = [['訪問先', "#{building_num} #{room_num} #{destination}様方"],
             ['停車日時', "#{st[0]}年 #{st[1]}月#{st[2]}日(#{st[3]}) #{st[4]}時#{st[5]}分〜"],
             ['', "#{ed[0]}年 #{ed[1]}月#{ed[2]}日(#{ed[3]}) #{ed[4]}時#{ed[5]}分"]]
     table(data, position: :center) do

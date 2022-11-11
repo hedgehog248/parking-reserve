@@ -41,6 +41,11 @@ class RoomNum < ActiveHash::Base
     { id: 38, name: '704号室' },
     { id: 39, name: '801号室' },
     { id: 40, name: '802号室' },
-    ( id: 41, name: '')
+    { id: 41, name: ''}
   ]
+
+  include ActiveHash::Associations
+  has_many :users
+  has_many :certificates
+
 end

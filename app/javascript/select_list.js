@@ -21,19 +21,19 @@ function selectCar() {
 
 function selectDestination() {
   const selectDestList = document.getElementById("certificate_dest_id")
-  const buildNum = document.getElementById('certificate_building_num');
-  const roomNum = document.getElementById('certificate_room_num');
+  const buildNum = document.getElementById('certificate_building_num_id');
+  const roomNum = document.getElementById('certificate_room_num_id');
   const destination = document.getElementById('certificate_destination');
 
   selectDestList.addEventListener('change',function() {
     const selectedIndex = this.selectedIndex
     if (selectedIndex == 1) {
-      buildNum.value = gon.user.building_num;
-      roomNum.value = gon.user.room_num;
+      buildNum.value = gon.user.building_num_id;
+      roomNum.value = gon.user.room_num_id;
       destination.value = gon.user.last_name;
     } else {
-      buildNum.value = "";
-      roomNum.value = "";
+      buildNum.value = 0;
+      roomNum.value = 0;
       destination.value = "";
     }
   })

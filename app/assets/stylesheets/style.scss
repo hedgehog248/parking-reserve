@@ -655,10 +655,9 @@ nav {
   }
   .build-num {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    input {
-      width: 6rem;
+    margin-bottom: 1em;
+    select {
+      margin-right: 1em;
     }
   }
 }
@@ -889,13 +888,6 @@ nav {
       width: 100%;
       input {
         width: 100%;
-      }
-    }
-    .build-num {
-      display: flex;
-      justify-content: left;
-      input {
-        width: 50%;
       }
     }
     .right-container {
