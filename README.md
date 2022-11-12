@@ -94,7 +94,7 @@ https://parking-reserve-38018.herokuapp.com/
 今後はヘルプ機能やキャンセル待ち機能を実装予定。
 
 # データベース設計
-[![Image from Gyazo](https://i.gyazo.com/0f9bc7b11183b6b2d43fc02f6913ce3d.png)](https://gyazo.com/0f9bc7b11183b6b2d43fc02f6913ce3d)
+[![Image from Gyazo](https://i.gyazo.com/d337a62e1b56904f567a8bd349d38237.png)](https://gyazo.com/d337a62e1b56904f567a8bd349d38237)
 # 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/5150d419ff7b7ceff059e1ee31d685a4.png)](https://gyazo.com/5150d419ff7b7ceff059e1ee31d685a4)
 # 開発環境
