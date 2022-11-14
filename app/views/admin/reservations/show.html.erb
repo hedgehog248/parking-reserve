@@ -32,8 +32,8 @@
         </tr>
         <tr class="odd-row">
           <%= tag.th "訪問先" %>
-          <%= tag.td "#{@reservation.certificate.building_num}号棟
-                      #{@reservation.certificate.room_num}号室
+          <%= tag.td "#{@reservation.certificate.building_num_id}
+                      #{@reservation.certificate.room_num_id}
                       #{@reservation.certificate.destination}"
           %>
         </tr>
@@ -50,7 +50,7 @@
       <table class="info-table mobile-blocky">
         <tr class="odd-row">
           <%= tag.th "部屋番号" %>
-          <%= tag.td "#{@reservation.user.building_num} #{@reservation.user.room_num}" %>
+          <%= tag.td "#{@reservation.user.building_num_id} #{@reservation.user.room_num_id}" %>
         </tr>
         <tr>
           <%= tag.th "登録者氏名" %>

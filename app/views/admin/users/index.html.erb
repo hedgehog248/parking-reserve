@@ -14,7 +14,7 @@
       <% @users.each do |user| %>
         <tr>
           <%= tag.td user.id, class: "center-text" %>
-          <%= tag.td "#{user.building_num}-#{user.room_num}" %>
+          <%= tag.td "#{user.building_num.name} #{user.room_num.name}" %>
           <%= tag.td "#{user.last_name} #{user.first_name}" %>
           <%= tag.td user.email %>
           <%= tag.td (l user.updated_at) %>

@@ -13,7 +13,7 @@
         </div>
         <div class="field">
           <%= f.label :room_num_id, class: "required" %><br />
-          <%= f.collection_select(:room_num_id, RoomNum.all, :id, :name, {}) %>
+          <%= f.collection_select(:room_num_id, RoomNum.where.not(id: 41), :id, :name, {}) %>
         </div>
       </div>
 

@@ -19,7 +19,7 @@
           <%= tag.td reservation.park_num, class: "center-text" %>
           <%= tag.td l reservation.start_datetime %>
           <%= tag.td l reservation.end_datetime %>
-          <%= tag.td "#{reservation.user.building_num} #{reservation.user.room_num}", class: "center-text" %>
+          <%= tag.td "#{reservation.user.building_num.name} #{reservation.user.room_num.name}", class: "center-text" %>
           <%= tag.td "#{reservation.user.last_name} #{reservation.user.first_name}" %>
           <%= tag.td l reservation.created_at %>
           <td class="center-text">
