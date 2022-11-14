@@ -27,14 +27,14 @@
           <%= tag.td "#{@reservation.certificate.license_num}" %>
         </tr>
         <tr>
-          <%= tag.th "使用者氏名" %>
+          <%= tag.th "使用者氏名(運転者)" %>
           <%= tag.td "#{@reservation.certificate.drivers_name}" %>
         </tr>
         <tr class="odd-row">
           <%= tag.th "訪問先" %>
-          <%= tag.td "#{@reservation.certificate.building_num_id}
-                      #{@reservation.certificate.room_num_id}
-                      #{@reservation.certificate.destination}"
+          <%= tag.td "#{@reservation.certificate.building_num.name} 
+                      #{@reservation.certificate.room_num.name} 
+                      #{@reservation.certificate.destination}様方"
           %>
         </tr>
         <tr>
@@ -50,7 +50,7 @@
       <table class="info-table mobile-blocky">
         <tr class="odd-row">
           <%= tag.th "部屋番号" %>
-          <%= tag.td "#{@reservation.user.building_num_id} #{@reservation.user.room_num_id}" %>
+          <%= tag.td "#{@reservation.user.building_num.name} #{@reservation.user.room_num.name}" %>
         </tr>
         <tr>
           <%= tag.th "登録者氏名" %>

@@ -16,15 +16,15 @@
       <% @reservations.each do |reservation| %>
         <tr>
           <%= tag.td reservation.id, class: "center-text" %>
-          <%= tag.td reservation.park_num, class: "center-text" %>
+          <%= tag.td "#{reservation.park_num}番", class: "center-text" %>
           <%= tag.td l reservation.start_datetime %>
           <%= tag.td l reservation.end_datetime %>
-          <%= tag.td "#{reservation.user.building_num.name} #{reservation.user.room_num.name}", class: "center-text" %>
+          <%= tag.td "#{reservation.user.building_num.name} #{reservation.user.room_num.name}" %>
           <%= tag.td "#{reservation.user.last_name} #{reservation.user.first_name}" %>
           <%= tag.td l reservation.created_at %>
           <td class="center-text">
             <% if reservation.certificate.present? %>
-              <%= link_to '提出済', admin_reservation_path(reservation.id) %>
+              <%= link_to '提出済', admin_reservation_path(reservation.id), class: "colored-btn narrow-btn" %>
             <% else %>
               <%= tag.p '未提出' %>
             <% end %>
