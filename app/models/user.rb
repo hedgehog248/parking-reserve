@@ -12,8 +12,8 @@ class User < ApplicationRecord
   belongs_to :room_num
 
   with_options presence: true do
-    validates :building_num_id, numericality: { other_than: 0, message: "can't be blank" }
-    validates :room_num_id, uniqueness: { scope: :building_num_id },  numericality: { other_than: 0, message: "can't be blank" }
+    validates :building_num_id, numericality: { other_than: 0, message: "を選択してください" }
+    validates :room_num_id, uniqueness: { scope: :building_num_id },  numericality: { other_than: 0, message: "を選択してください" }
   end
 
   NAME_REGEX = /\A[ぁ-んァ-ヶ一-龥々ー]+\z/.freeze
