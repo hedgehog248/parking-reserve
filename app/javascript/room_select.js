@@ -89,6 +89,8 @@ ary[8] = [
   25, 26, 27
 ];
 
+// 管理事務所
+ary[9] = [41];
 
 const toggle = (buildingAry, items, list) => {
   // 全ての表示を一度消す
