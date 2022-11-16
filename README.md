@@ -11,10 +11,14 @@ https://parking-reserve-38018.herokuapp.com/
 
 
 # テスト用アカウント
-* Basic認証ID: admin  
-* Basic認証パスワード: 9900  
-* 利用者メールアドレス: test@test  
-* 利用者パスワード: 1111aaaa  
+|                   |            |
+| ----------------- | ---------- |
+| Basic認証ID:        | admin      |
+| Basic認証パスワード:  | 9900       |
+| 利用者メールアドレス:  | test@user  |
+| 利用者パスワード:     | test1234   |
+| 管理者メールアドレス:  | admin@user |
+| 管理者パスワード:     | admin1234  |
 
 # 利用方法
 ## 空き状況の確認・新規予約
@@ -37,6 +41,14 @@ https://parking-reserve-38018.herokuapp.com/
 1. ヘッダーの利用者情報をクリック。
 1. 車両情報の新規登録ボタンを押し、必要事項を入力のうえ登録ボタンを押す。  
 (利用許可証の申請時に登録した車両情報が自動入力の選択肢として表示される）
+
+## 【管理者機能】予約一覧
+1. ログイン画面から管理者用メールアドレスとパスワードでログイン後、ヘッダーの予約一覧をクリック。
+1. 全ての予約が一覧で表示される。また許可証申請済みの場合は右端のボタンで申請内容の確認が可能。ヘッダーをクリックしてソートできる。
+
+## 【管理者機能】退去した利用者の削除
+1. ログイン画面から管理者用メールアドレスとパスワードでログイン後、ヘッダーの利用者一覧をクリック。
+1. 登録済みの全利用者（管理者を除く）が表示される。右端のボタンで強制削除が可能。
 
 # アプリケーションを作成した背景
 このアプリは実際に私の住むマンションをモデルにしている。  
@@ -87,6 +99,12 @@ https://parking-reserve-38018.herokuapp.com/
 [![Image from Gyazo](https://i.gyazo.com/ace181a66dd028d720334dc0f8cfc755.gif)](https://gyazo.com/ace181a66dd028d720334dc0f8cfc755)
 * 申請内容の変更機能
 [![Image from Gyazo](https://i.gyazo.com/af09830acf01d8e2bf5990d733b49534.gif)](https://gyazo.com/af09830acf01d8e2bf5990d733b49534)
+
+## 管理者機能
+* 予約一覧機能（ソート機能あり）
+[![Image from Gyazo](https://i.gyazo.com/e81ee807329cd5c4c4e2ac0be1a05daf.gif)](https://gyazo.com/e81ee807329cd5c4c4e2ac0be1a05daf)
+* 利用者一覧機能（ソート機能あり）
+[![Image from Gyazo](https://i.gyazo.com/0b6cc3f7a25d9eb9f6dcf16b00bb1315.gif)](https://gyazo.com/0b6cc3f7a25d9eb9f6dcf16b00bb1315)
 
 ## レスポンシブデザイン
 * スマートフォン、タブレット、PCの3段階で実装
