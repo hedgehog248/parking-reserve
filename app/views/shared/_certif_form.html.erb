@@ -9,17 +9,30 @@
   <div class="form-contents-wrapper">
     <div class="left-container">
       <%= f.label :dest_id, "訪問先の入力" %><br>
-      <%= f.select :dest_id, options_for_select({"自宅" => 1, "[新規で入力]" => 2}), include_blank: "選択してください" %>
+      <% if current_user.admin %>
+        <%= f.select :dest_id, options_for_select({"管理事務所" => 1, "[新規で入力]" => 2}), include_blank: "選択してください" %>
+      <% else %>
+        <%= f.select :dest_id, options_for_select({"自宅" => 1, "[新規で入力]" => 2}), include_blank: "選択してください" %>
+      <% end %>
     </div>
     <div class="right-container">
       <%= f.label :building_num_id, "部屋番号", class: "required" %><br>
       <div class="build-num">
-        <div>
-          <%= f.collection_select(:building_num_id, BuildingNum.where.not(id: 9), :id, :name, {}, selected: 0) %>
-        </div>
-        <div>
-          <%= f.collection_select(:room_num_id, RoomNum.where.not(id: 41), :id, :name, {}) %>
-        </div>
+        <% if current_user.admin %>
+          <div>
+            <%= f.collection_select(:building_num_id, BuildingNum.all, :id, :name, {}, selected: 0) %>
+          </div>
+          <div>
+            <%= f.collection_select(:room_num_id, RoomNum.all, :id, :name, {}) %>
+          </div>
+        <% else %>
+          <div>
+            <%= f.collection_select(:building_num_id, BuildingNum.where.not(id: 9), :id, :name, {}, selected: 0) %>
+          </div>
+          <div>
+            <%= f.collection_select(:room_num_id, RoomNum.where.not(id: 41), :id, :name, {}) %>
+          </div>
+        <% end %>
       </div>
       <%= f.label :destination, "訪問先", class: "required" %><br>
       <%= f.text_field :destination, placeholder: "例)✕✕", class: "destination" %>様方
