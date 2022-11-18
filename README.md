@@ -11,14 +11,32 @@ https://parking-reserve-38018.herokuapp.com/
 
 
 # テスト用アカウント
-|                   |            |
-| ----------------- | ---------- |
-| Basic認証ID:        | admin      |
-| Basic認証パスワード:  | 9900       |
-| 利用者メールアドレス:  | test@user  |
-| 利用者パスワード:     | test1234   |
-| 管理者メールアドレス:  | admin@user |
-| 管理者パスワード:     | admin1234  |
+<table>
+  <tr>
+    <td>Basic認証ID</td>
+    <td>admin</td>
+  </tr>
+  <tr>
+    <td>Basic認証パスワード</td>
+    <td>9900</td>
+  </tr>
+  <tr>
+    <td>利用者メールアドレス</td>
+    <td>test@user</td>
+  </tr>
+  <tr>
+    <td>利用者パスワード</td>
+    <td>test1234</td>
+  </tr>
+  <tr>
+    <td>管理者メールアドレス</td>
+    <td>admin@user</td>
+  </tr>
+  <tr>
+    <td>管理者パスワード</td>
+    <td>admin1234</td>
+  </tr>
+</table>
 
 # 利用方法
 ## 空き状況の確認・新規予約
@@ -111,7 +129,6 @@ https://parking-reserve-38018.herokuapp.com/
 [![Image from Gyazo](https://i.gyazo.com/48d0cf033a9e4097249bcfa85e8bf7ae.gif)](https://gyazo.com/48d0cf033a9e4097249bcfa85e8bf7ae)
 
 # 実装予定の機能
-現在は管理者機能を実装中。  
 今後はヘルプ機能やキャンセル待ち機能を実装予定。
 
 # データベース設計
