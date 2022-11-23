@@ -1,0 +1,24 @@
+  <%= form_with model: car, local: true, class: "car-form" do |f| %>
+  <div class="car-form-contents">
+    <%= render "shared/error_messages", resource: f.object %>
+    <table class="car-form-table mobile-blocky">
+      <tr class="form-content">
+        <%= tag.th (f.label :nickname, "識別用ニックネーム", class: 'required') %>
+        <%= tag.td (f.text_field :nickname, placeholder: "例)通勤用など", autofocus: true) %>
+      </tr>
+      <tr class="form-content">
+        <%= tag.th (f.label :model, "使用車両（車種）", class: 'required') %>
+        <%= tag.td (f.text_field :model) %>
+      </tr>
+      <tr class='form-content'>
+        <%= tag.th (f.label :license_num, "車両登録番号", class: 'required') %>
+        <%= tag.td (f.text_field :license_num) %>
+      </tr>
+      <tr class='form-content'>
+        <%= tag.th (f.label :drivers_name, "使用者氏名", class: 'required') %>
+        <%= tag.td (f.text_field :drivers_name) %>
+      </tr>
+    </table>
+      <%= f.submit '登録', class: "colored-btn btn" %>
+    <% end %>
+  </div>

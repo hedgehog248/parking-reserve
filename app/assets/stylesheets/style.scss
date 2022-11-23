@@ -34,33 +34,40 @@ $colors: (
 html {
   font-size: 62.5%;
 }
+
 body {
   font-size: 1.4rem;
   font-weight: 400;
 }
+
 h1 {
   font-size: 3.8rem;
   font-weight: 900;
 }
+
 h2 {
   font-size: 2.4rem;
   font-weight: 700;
 }
+
 h3 {
   font-size: 1.6rem;
   font-weight: 700;
 }
+
 h4 {
   font-size: 1.2rem;
   font-weight: 400;
 }
+
 em {
   font-size: 1.2rem;
   font-weight: 400;
 }
 
 // リンクの装飾をなしにする
-a:link, a:visited {
+a:link,
+a:visited {
   text-decoration: none;
   color: inherit;
 }
@@ -72,6 +79,7 @@ a:link, a:visited {
   min-height: calc(100vh - (20px + 1rem));
   background-color: colors(base);
 }
+
 /*----------------------------------------------------------
   Header
 ----------------------------------------------------------*/
@@ -86,10 +94,12 @@ header {
 .logo {
   width: 100%;
   max-width: 720px;
+
   a {
     cursor: pointer;
     color: colors(accent);
   }
+
   p {
     font-size: 1rem;
   }
@@ -109,6 +119,7 @@ nav {
   justify-content: right;
   width: 100%;
   max-width: 720px;
+
   li {
     display: block;
     padding: 0.4rem 1.4rem;
@@ -240,6 +251,7 @@ nav {
   margin: 1rem;
   font-size: 1.4rem;
   cursor: pointer;
+
   .btn-icon {
     position: absolute;
     top: 52%;
@@ -248,6 +260,7 @@ nav {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
   }
+
   .btn-text a {
     display: block;
     width: 100%;
@@ -262,10 +275,12 @@ nav {
 .reserv-info {
   width: 100%;
   font-size: 1.4rem;
+
   th {
     padding: 0.3em;
     font-weight: 500;
   }
+
   td {
     padding: 0.3em;
     font-weight: 400;
@@ -284,8 +299,10 @@ nav {
   border-radius: 10px;
   padding: 20px 40px 40px;
   background-color: colors(grayish-base);
+
   .form-content {
     padding: 20px;
+
     .radio-btn {
       display: inline-block;
       padding: 0 0.5em;
@@ -301,6 +318,7 @@ nav {
   justify-content: space-between;
   align-items: baseline;
 }
+
 .calendar-title {
   padding: 0 0.1em;
   font-size: 2.8rem;
@@ -310,6 +328,7 @@ nav {
 
 .simple-calendar {
   max-width: 700px;
+
   th {
     border: 1px solid;
     border-color: colors(table-border);
@@ -319,24 +338,28 @@ nav {
     font-weight: 700;
     text-align: center;
   }
+
   .table-striped {
     overflow-x: auto;
     white-space: nowrap;
-    -webkit-overflow-scrolling: touch;  
+    -webkit-overflow-scrolling: touch;
     width: 100%;
     border-collapse: collapse;
     text-align: center;
   }
+
   td {
     display: table-cell;
     vertical-align: middle;
   }
+
   .day {
     height: 2.6rem;
     padding: 0;
     border: 1px solid;
     border-color: colors(table-border);
     font-size: 2rem;
+
     a {
       display: block;
       width: 100%;
@@ -344,21 +367,26 @@ nav {
       padding: 1.4rem;
     }
   }
+
   .today {
     background-color: colors(base);
     outline: 3px solid colors(accent);
     outline-offset: -8px;
   }
+
   .past {
     background-color: colors(past);
     color: darken(colors(past), 20%);
   }
+
   .future {
     background-color: colors(base);
   }
+
   .prev-month a {
     display: none;
   }
+
   .next-month a {
     display: none;
   }
@@ -371,18 +399,22 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+
   .timetable-title {
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 2.8rem;
     text-align: center;
+
     span {
       font-size: 1.8rem;
     }
   }
+
   .prev-day {
     text-align: left;
   }
+
   .next-day {
     text-align: right;
   }
@@ -393,27 +425,31 @@ nav {
   overflow-x: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
+
   .timetable {
     border-collapse: collapse;
+
     .hours-cell {
       position: relative;
       width: auto;
       height: 50px;
+
       .hour-label {
         position: absolute;
         left: 0%;
-        bottom: -15%; 
+        bottom: -15%;
         transform: translate(-50%, -50%);
         font-size: 1.2rem;
         font-weight: 400;
       }
     }
   }
+
   // 駐車場ナンバーのヘッダー
   .p_num-wrapper {
-    position: sticky;          // スクロール時にヘッダーが画面に留まる設定
+    position: sticky; // スクロール時にヘッダーが画面に留まる設定
     left: 0;
-    z-index: 10;               // レイヤーを手前側にしてかぶらないようにする
+    z-index: 10; // レイヤーを手前側にしてかぶらないようにする
     justify-content: center;
     align-items: center;
     padding: 2px;
@@ -422,6 +458,7 @@ nav {
     background-color: colors(base);
     outline: 2px solid colors(base);
     outline-offset: -1px;
+
     .p_num_label {
       width: 100%;
       height: 100%;
@@ -432,16 +469,20 @@ nav {
       text-align: center;
     }
   }
+
   // 駐車場ナンバーで色を変える設定
   .p_num_1 {
     background-color: colors(park1);
   }
+
   .p_num_2 {
     background-color: colors(park2);
   }
+
   .p_num_3 {
     background-color: colors(park3);
   }
+
   .p_num_4 {
     background-color: colors(park4);
   }
@@ -453,6 +494,7 @@ nav {
     border-width: 1px;
     border-style: solid dashed;
     border-color: colors(table-border);
+
     // 予約済みの枠にラインを引く
     .reserved_bar {
       color: transparent;
@@ -463,6 +505,7 @@ nav {
       display: flex;
       justify-content: center;
       align-items: center;
+
       .time-submit {
         display: block;
         width: 100%;
@@ -484,10 +527,13 @@ nav {
   display: flex;
   justify-content: center;
   width: 100%;
-  .colored-btn, .white-btn {
+
+  .colored-btn,
+  .white-btn {
     margin: 3rem 3rem 0;
   }
 }
+
 /*----------------------------------------------------------
   reservation/create 予約完了ページ
 ----------------------------------------------------------*/
@@ -506,15 +552,16 @@ nav {
   margin-bottom: 2em;
   border-radius: 5px;
   background-color: colors(grayish-base);
-  
+
   .reserv-content-wrapper {
     display: flex;
   }
-  
+
   .left-content {
     flex: 2;
     margin-right: 2rem;
   }
+
   .btn-content {
     display: flex;
     flex-direction: column;
@@ -533,31 +580,39 @@ nav {
 /*----------------------------------------------------------
   users/show 利用者管理
 ----------------------------------------------------------*/
-.user-info-content, .mycar-content {
+.user-info-content,
+.mycar-content {
   padding: 1.5em;
   margin-bottom: 2rem;
   border-radius: 5px;
   background-color: colors(grayish-base);
 }
 
-.user-content-wrapper, .mycar-content-wrapper {
+.user-content-wrapper,
+.mycar-content-wrapper {
   display: flex;
+
   .left-content {
     flex: 5;
   }
-  .user-info, .mycar-info {
+
+  .user-info,
+  .mycar-info {
     width: 100%;
     font-size: 1.4rem;
+
     th {
       padding: 0.3rem;
       font-weight: 500;
       width: 50%;
     }
+
     td {
       padding: 0.3rem;
       font-weight: 400;
     }
   }
+
   .btn-content {
     display: flex;
     flex-direction: column;
@@ -571,12 +626,41 @@ nav {
   justify-content: space-between;
   align-items: center;
   margin: 2em 1.5em 0;
+
   .mycar-title {
     flex: 5;
     color: colors(accent);
   }
+
   .mycar-registration {
     flex: 1;
+  }
+}
+
+/*----------------------------------------------------------
+  cars 車両情報登録
+----------------------------------------------------------*/
+.car-form-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  padding: 20px 40px 40px;
+  background-color: colors(grayish-base);
+
+  .car-form-table {
+    margin-bottom: 1em;
+  }
+
+  th,
+  td {
+    padding: 0.8em 0.5em;
+
+    input {
+      padding: 0.2em;
+    }
   }
 }
 
@@ -593,25 +677,31 @@ nav {
   margin-bottom: 40px;
   border-radius: 10px;
   background-color: #dbdbdb;
+
   .alert {
     padding-bottom: 1em;
     text-align: center;
     color: colors(note);
   }
+
   .field {
     padding-bottom: 0.8em;
+
     .text-field {
       width: 100%;
     }
   }
+
   .actions {
     display: flex;
     justify-content: center;
   }
+
   .links {
     padding: 1em;
     text-align: center;
   }
+
   .text-field {
     padding: 0.2em;
   }
@@ -619,6 +709,7 @@ nav {
 
 .build-num {
   display: flex;
+
   .field {
     margin-right: 3rem;
   }
@@ -636,10 +727,12 @@ nav {
   border-radius: 10px;
   padding: 20px 40px 40px;
   background-color: colors(grayish-base);
+
   .reserv-info-wrapper {
     align-self: stretch;
     padding: 0 10%;
   }
+
   .form-contents-wrapper {
     display: flex;
     justify-content: space-around;
@@ -648,14 +741,18 @@ nav {
     border: solid 1px colors(second);
     border-radius: 5px;
     margin: 1rem 0 1rem;
-    input, select {
+
+    input,
+    select {
       padding: 0.2rem;
       margin-bottom: 1rem;
-    }  
+    }
   }
+
   .build-num {
     display: flex;
     margin-bottom: 1em;
+
     select {
       margin-right: 1em;
     }
@@ -670,9 +767,11 @@ nav {
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 }
+
 .all-list-table {
   width: 100%;
   border-collapse: collapse;
+
   th {
     position: relative;
     padding: 0.4em 1em 0.4em 0.4em;
@@ -681,6 +780,7 @@ nav {
     color: colors(base);
     cursor: pointer;
   }
+
   td {
     height: 2.8em;
     padding: 0 0.5em;
@@ -689,7 +789,9 @@ nav {
 }
 
 .sortable-header {
-  &::before, &::after {
+
+  &::before,
+  &::after {
     content: "";
     position: absolute;
     height: 0;
@@ -698,17 +800,21 @@ nav {
     right: 0.4em;
     top: 50%;
   }
+
   &::before {
     border-bottom-color: lighten(colors(accent), 36%);
     margin-top: -0.6em;
   }
+
   &::after {
     border-top-color: lighten(colors(accent), 36%);
     margin-top: 0.1em;
   }
+
   &.asc::before {
     border-bottom-color: white;
   }
+
   &.desc::after {
     border-top-color: white;
   }
@@ -726,19 +832,23 @@ nav {
     font-size: 2rem;
     font-weight: 500;
   }
+
   .info-table {
     width: 100%;
     font-size: 1.4rem;
     margin-bottom: 1em;
+
     th {
       padding: 0.5em;
       font-weight: 500;
       width: 36%;
     }
+
     td {
       padding: 0.5em;
       font-weight: 400;
     }
+
     .odd-row {
       background-color: colors(base);
     }
@@ -755,25 +865,32 @@ nav {
     box-shadow: none;
     transform: translateY(3px);
   }
-  .table-striped a:hover, .all-list-table tr:hover {
+
+  .table-striped a:hover,
+  .all-list-table tr:hover {
     background-color: rgba(colors(main), 0.7);
     transition: all, 0.2s;
   }
+
   .timetable-container .cell .button_to .time-submit:hover {
     background-color: colors(main);
     transition: all, 0.2s;
   }
 }
+
 /* hover非対応デバイスのとき */
 @media (hover: none) {
   .btn:active {
     box-shadow: none;
     transform: translateY(3px);
   }
-  .table-striped a:active, .all-list-table tr:active {
+
+  .table-striped a:active,
+  .all-list-table tr:active {
     background-color: rgba(colors(main), 0.7);
     transition: all, 0.2s;
   }
+
   .timetable-container .cell .button_to .time-submit:active {
     background-color: colors(main);
     transition: all, 0.2s;
@@ -786,33 +903,43 @@ nav {
   html {
     font-size: 87.5%;
   }
+
   .user-info-content {
     display: block;
   }
-  /* certificate shared */ 
+
+  /* certificate shared */
   .certificate-form {
     padding: 1rem;
+
     .reserv-info-wrapper {
       padding: 0;
     }
+
     .form-contents-wrapper {
       width: 100%;
       max-width: 680px;
     }
   }
-  .reserv-info-content, .user-info-content, .mycar-content {
+
+  .reserv-info-content,
+  .user-info-content,
+  .mycar-content {
     padding: 1em;
+
     .left-content {
       margin-right: 0;
     }
   }
+
   .mycar-title-wrapper {
     margin: 2em 1em 0;
   }
+
   /* アイコン付きボタンの調整 */
   .rectangular {
     .btn-icon {
-    font-size: 36px;
+      font-size: 36px;
     }
   }
 }
@@ -822,16 +949,20 @@ nav {
   html {
     font-size: 87.5%;
   }
+
   .logo {
     text-align: center;
   }
+
   .nav {
     display: block;
   }
+
   .nav-bar {
     display: block;
     width: 100%;
     max-width: 100%;
+
     li {
       padding: 0.2rem;
       margin-left: 0;
@@ -843,21 +974,32 @@ nav {
   .btn-content {
     flex-wrap: wrap;
   }
+
   .reserv-info-content {
     .reserv-content-wrapper {
       display: block;
     }
   }
+
   .mobile-blocky {
     display: block;
   }
-  .mobile-blocky tr, .mobile-blocky th, .mobile-blocky td {
+
+  .mobile-blocky tr,
+  .mobile-blocky th,
+  .mobile-blocky td {
     display: block;
     width: 100%;
   }
-  .user-content-wrapper, .mycar-content-wrapper {
-    .user-info, .mycar-info {
-      th, td {
+
+  .user-content-wrapper,
+  .mycar-content-wrapper {
+
+    .user-info,
+    .mycar-info {
+
+      th,
+      td {
         width: 100%;
       }
     }
@@ -865,54 +1007,90 @@ nav {
 
   .mycar-title-wrapper {
     margin: 2em 1em 0;
+
     .mycar-title {
       text-align: center;
     }
   }
-  /* reservations/confirm */ 
+
+  .car-form-contents {
+    padding: 1em 1em;
+
+    .car-form-table {
+      margin-bottom: 1em;
+    }
+
+    th,
+    td {
+      padding: 0;
+    }
+
+    td {
+      padding-bottom: 1em;
+
+      input {
+        padding: 0.2em;
+      }
+    }
+  }
+
+
+  /* reservations/confirm */
   .confirm-form {
     flex-direction: column-reverse;
     width: fit-content;
-    .colored-btn, .white-btn {
+
+    .colored-btn,
+    .white-btn {
       display: block;
       margin: 2.6rem 0 0 0;
     }
   }
-  /* certificate shared */ 
+
+  /* certificate shared */
   .certificate-form {
     padding: 1rem;
+
     .reserv-info-wrapper {
       padding: 0;
     }
+
     .form-contents-wrapper {
       display: block;
       width: 100%;
+
       input {
         width: 100%;
       }
     }
+
     .right-container {
       .destination {
         width: calc(100% - 2rem - 1rem);
-      }  
+      }
     }
   }
 
-  .reserv-info-content, .user-info-content, .mycar-content {
+  .reserv-info-content,
+  .user-info-content,
+  .mycar-content {
     padding: 1rem;
+
     .left-content {
       margin-right: 0;
       margin-bottom: 1rem;
     }
   }
+
   /* アイコン付きボタンの調整 */
   .rectangular {
     margin: 1rem 0;
     min-width: 248px;
+
     .btn-text a {
       text-align: center;
       padding: calc((2.6em - 1.4rem) / 2) 0.5em calc((2.6em - 1.4rem) / 2) 0.5em;
-    }  
+    }
   }
 
   .long {
@@ -921,6 +1099,7 @@ nav {
       left: calc(50vw - 3.8em);
     }
   }
+
   .short {
     .btn-icon {
       font-size: 36px;
@@ -928,6 +1107,3 @@ nav {
     }
   }
 }
-
-
-
