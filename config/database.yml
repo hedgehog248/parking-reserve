@@ -49,6 +49,8 @@ test:
 #
 production:
   <<: *default
+  adapter: mysql2
   database: parking_reserve_production
-  username: parking_reserve
-  password: <%= ENV['PARKING_RESERVE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
