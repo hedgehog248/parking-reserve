@@ -3,11 +3,11 @@ ABCマンション(仮)来客用駐車場予約アプリ『トットコ！』
 
 
 # アプリケーション概要
-実在のマンションをモデルとした、来客用駐車場の予約管理と利用申請、利用許可証の発行ができるウェブアプリケーション。  
+マンションの来客用駐車場の予約管理と利用申請、利用許可証の発行ができるウェブアプリケーション。  
 
 
 # URL
-https://parking-reserve-38018.herokuapp.com/  
+http://54.92.30.85/
 
 
 # テスト用アカウント
@@ -138,7 +138,7 @@ https://parking-reserve-38018.herokuapp.com/
 # 開発環境
 * フロントエンド: HTML, CSS, Javascript  
 * バックエンド: Ruby, Ruby on Rails  
-* インフラ: MacOS Big Sur(ver.11.7), Github Desktop, Sequel Pro, Heroku
+* インフラ: MacOS Big Sur(ver.11.7), Github Desktop, Sequel Pro, Heroku, AWS
 * テスト: Rspec  
 * テキストエディタ: Visual Studio Code  
 * タスク管理: Github  
