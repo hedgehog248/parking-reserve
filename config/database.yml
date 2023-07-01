@@ -9,24 +9,24 @@
 # And be sure to use new-style password hashing:
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
-default: &default
-  adapter: mysql2
-  encoding: utf8
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
-  socket: /tmp/mysql.sock
+# default: &default
+#   adapter: mysql2
+#   encoding: utf8
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   username: root
+#   password:
+#   socket: /tmp/mysql.sock
 
-development:
-  <<: *default
-  database: parking_reserve_development
+# development:
+#   <<: *default
+#   database: parking_reserve_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: parking_reserve_test
+# test:
+#   <<: *default
+#   database: parking_reserve_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -47,10 +47,35 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
+# production:
+#   <<: *default
+#   adapter: mysql2
+#   database: parking_reserve_production
+#   username: root
+#   password: <%= ENV['DATABASE_PASSWORD'] %>
+#   socket: /var/lib/mysql/mysql.sock
+
+default: &default
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
   <<: *default
   adapter: mysql2
-  database: parking_reserve_production
   username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  password:
+  host: localhost
+  database: parking_reserve_development
+
+test:
+  <<: *default
+  adapter: mysql2
+  username: root
+  password:
+  host: localhost
+  database: parking_reserve_test
+
+production:
+  <<: *default
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
